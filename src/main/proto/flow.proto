@@ -1,0 +1,71 @@
+syntax = "proto3";
+import "google/protobuf/struct.proto";
+option java_multiple_files = true;
+option java_package = "com.orchy.api.v1";
+option java_outer_classname = "Orchy";
+option objc_class_prefix = "ORC";
+
+message Task{
+    string workflowName = 1;
+    string flowId = 2;
+    map<string,google.protobuf.Value> data = 3;
+    int32 actionId  = 4;
+    string taskName = 5;
+    int32 retryCount = 6;
+}
+
+message Tasks {
+    repeated Task tasks = 1;
+}
+message TaskResult{
+    string workflowName = 1;
+    string taskName = 2;
+    string flowId = 3;
+    int32 actionId = 4;
+    map<string,google.protobuf.Value> data = 5;
+    enum Status{
+        SUCCESS = 0;
+        FAIL  = 1;
+    }
+    Status status = 6;
+    int32 retryCount = 7;
+}
+
+message TaskDef{
+    string name = 1;
+    int32 retryCount  = 2;
+    int32 retryAfterSeconds = 3;
+    string retryPolicy  = 4;
+    int32 timeoutSeconds = 5;
+}
+
+message TaskDefSaveResponse{
+    bool status = 1;
+}
+
+message TaskPollRequest{
+    string taskType = 1;
+    int32 batchSize = 2;
+}
+
+message TaskResultPushResponse{
+    bool status = 1;
+}
+
+message Server {
+    string id = 1;
+    string rpc_addr = 2;
+}
+
+message GetServersRequest {}
+
+message GetServersResponse {
+  repeated Server servers = 1;
+}
+
+service TaskService{
+    rpc SaveTaskDef(TaskDef) returns (TaskDefSaveResponse){}
+    rpc Poll(TaskPollRequest) returns (Tasks){}
+    rpc Push(TaskResult) returns (TaskResultPushResponse) {}
+    rpc GetServers(GetServersRequest) returns (GetServersResponse) {}
+}

@@ -1,5 +1,6 @@
 package com.orchy.worker;
 
+import com.google.protobuf.Descriptors;
 import com.google.protobuf.Value;
 import com.orchy.api.v1.*;
 import com.orchy.client.Client;
@@ -60,8 +61,10 @@ public class Poller {
                                 .setTaskName(task.getTaskName())
                                 .setStatus(TaskResult.Status.SUCCESS)
                                 .setRetryCount(task.getRetryCount())
+                                .putAllData(Util.convertRev(output))
                                 .build();
                     }catch (Exception e){
+                        e.printStackTrace();
                         result = TaskResult.newBuilder()
                                 .setWorkflowName(task.getWorkflowName())
                                 .setFlowId(task.getFlowId())

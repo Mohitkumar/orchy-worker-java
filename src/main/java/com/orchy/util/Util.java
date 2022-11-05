@@ -1,5 +1,7 @@
 package com.orchy.util;
 
+import com.google.protobuf.ListValue;
+import com.google.protobuf.Struct;
 import com.google.protobuf.Value;
 
 import java.util.ArrayList;
@@ -60,5 +62,48 @@ public class Util {
             }
         }
         return list;
+    }
+
+    public static Map<String, Value>  convertRev(Map<String, Object> input){
+        Map<String, Value> output = new HashMap<>();
+        input.forEach((k,v) ->{
+            if( v instanceof String){
+                output.put(k, Value.newBuilder().setStringValue((String)v).build());
+            } else if (v instanceof Integer) {
+                output.put(k, Value.newBuilder().setNumberValue((int)v).build());
+            } else if (v instanceof Double) {
+                output.put(k, Value.newBuilder().setNumberValue((double)v).build());
+            } else if (v instanceof Boolean) {
+                output.put(k, Value.newBuilder().setBoolValue((boolean)v).build());
+            } else if (v instanceof List) {
+                output.put(k, Value.newBuilder()
+                        .setListValue(ListValue.newBuilder().addAllValues(convertRev((List)v)).build()).build());
+            } else if (v instanceof Map) {
+                Map<String, Value> map = convertRev((Map<String, Object>) v);
+                output.put(k, Value.newBuilder()
+                        .setStructValue(Struct.newBuilder().putAllFields(map).build()).build());
+            }
+        });
+        return output;
+    }
+
+    private static List<Value> convertRev(List<Object> input){
+        List<Value> out = new ArrayList<>();
+        for (Object v : input) {
+            if( v instanceof String){
+                out.add(Value.newBuilder().setStringValue((String)v).build());
+            } else if (v instanceof Double || v instanceof Integer) {
+                out.add(Value.newBuilder().setNumberValue((double)v).build());
+            } else if (v instanceof Boolean) {
+                out.add(Value.newBuilder().setBoolValue((boolean)v).build());
+            } else if (v instanceof List) {
+                out.addAll(convertRev((List)v));
+            } else if (v instanceof Map) {
+                Map<String, Value> map = convertRev((Map<String, Object>) v);
+                out.add(Value.newBuilder()
+                        .setStructValue(Struct.newBuilder().putAllFields(map).build()).build());
+            }
+        }
+        return out;
     }
 }

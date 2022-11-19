@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Function<Map<String, Object>, Map<String, Object>> addDataFn= (Map<String, Object> input) ->{
             System.out.println(input);
-            input.put("newKey","data");
+            input.put("newKey",22);
             return input;
         };
         Function<Map<String, Object>, Map<String, Object>> printFn= (Map<String, Object> input) ->{

@@ -35,6 +35,7 @@ public class Util {
                     break;
                 case LIST_VALUE:
                     output.put(k,convert(v.getListValue().getValuesList()));
+                    break;
             }
         });
         return output;
@@ -46,6 +47,7 @@ public class Util {
             switch (v.getKindCase()){
                 case BOOL_VALUE:
                     list.add(v.getBoolValue());
+                    break;
                 case NUMBER_VALUE:
                     double numberValue = v.getNumberValue();
                     if(numberValue % 1 == 0){
@@ -53,12 +55,16 @@ public class Util {
                     }else{
                         list.add(v.getNumberValue());
                     }
+                    break;
                 case STRING_VALUE:
                     list.add(v.getStringValue());
+                    break;
                 case LIST_VALUE:
                     list.addAll(convert(v.getListValue().getValuesList()));
+                    break;
                 case STRUCT_VALUE:
                     list.add(convert(v.getStructValue().getFieldsMap()));
+                    break;
             }
         }
         return list;
@@ -92,7 +98,9 @@ public class Util {
         for (Object v : input) {
             if( v instanceof String){
                 out.add(Value.newBuilder().setStringValue((String)v).build());
-            } else if (v instanceof Double || v instanceof Integer) {
+            } else if (v instanceof Integer) {
+                out.add(Value.newBuilder().setNumberValue((int)v).build());
+            } else if (v instanceof Double) {
                 out.add(Value.newBuilder().setNumberValue((double)v).build());
             } else if (v instanceof Boolean) {
                 out.add(Value.newBuilder().setBoolValue((boolean)v).build());

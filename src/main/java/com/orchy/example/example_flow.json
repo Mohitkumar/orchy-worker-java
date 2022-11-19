@@ -1,0 +1,54 @@
+{
+  "name":"wf3",
+  "rootAction" :1,
+  "onSuccess" :"DELETE",
+  "onFailure" :"DELETE",
+  "actions":[
+    {
+      "name":"add-data-worker",
+      "type":"user",
+      "id":1,
+      "parameters":{
+        "param1":23,
+        "param2":"jk",
+        "param3":"$.input.k1",
+        "nested":{
+          "key1":"d1",
+          "key2":"$.input.nest.k1",
+          "list":[23,{"nest":{"k":21}}]
+        }
+      },
+      "next":{"default":2}
+    },
+    {
+      "name":"switch",
+      "type":"system",
+      "id":2,
+      "expression":"$1.output.newKey",
+      "parameters":{
+
+      },
+      "next":{
+        "22":3
+      }
+    },
+    {
+      "id":3,
+      "type":"system",
+      "name":"delay",
+      "delaySeconds":5,
+      "next":{"default":4}
+    },
+    {
+      "name":"print-worker",
+      "type":"user",
+      "id":4,
+      "parameters":{
+        "param1":"dsds",
+        "param2" :"$.input.k2",
+        "param3" :"$.1.output.newKey",
+        "param4" :"$.1.output.nested.list"
+      }
+    }
+  ]
+}

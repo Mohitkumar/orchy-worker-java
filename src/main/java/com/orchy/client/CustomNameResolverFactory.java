@@ -5,6 +5,8 @@ import com.orchy.api.v1.GetServersResponse;
 import com.orchy.api.v1.Server;
 import com.orchy.api.v1.TaskServiceGrpc;
 import io.grpc.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nullable;
 import java.net.InetSocketAddress;
@@ -13,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CustomNameResolverFactory extends NameResolver.Factory {
+
+    private Logger LOGGER = LoggerFactory.getLogger(CustomNameResolverFactory.class);
 
     List<EquivalentAddressGroup> addresses = new ArrayList<>();
 
@@ -23,6 +27,7 @@ public class CustomNameResolverFactory extends NameResolver.Factory {
         GetServersRequest request  = GetServersRequest.newBuilder().build();
         GetServersResponse servers = TaskServiceGrpc.newBlockingStub(managedChannel).getServers(request);
         List<Server> serversList = servers.getServersList();
+        LOGGER.info("found servers {}", servers);
         for (Server server : serversList) {
             String rpcAddr = server.getRpcAddr();
             String[] split = rpcAddr.split(":");

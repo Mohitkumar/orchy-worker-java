@@ -1,10 +1,11 @@
 package com.orchy.worker;
 
-import com.google.protobuf.Descriptors;
 import com.google.protobuf.Value;
 import com.orchy.api.v1.*;
 import com.orchy.client.Client;
 import com.orchy.util.Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Poller {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Poller.class);
 
     private ScheduledExecutorService scheduledExecutorService;
 
@@ -39,14 +42,17 @@ public class Poller {
 
     private class PollerWorker implements Runnable{
 
+        TaskPollRequest request = TaskPollRequest
+                .newBuilder()
+                .setTaskType(Poller.this.workerName)
+                .setBatchSize(Poller.this.worker.getBatchSize()).build();
+
         @Override
         public void run() {
-            TaskPollRequest request = TaskPollRequest
-                    .newBuilder()
-                    .setTaskType(Poller.this.workerName)
-                    .setBatchSize(Poller.this.worker.getBatchSize()).build();
+            LOGGER.debug("polling worker {}",Poller.this.workerName);
             try{
                 Tasks tasks = Poller.this.client.getClient().poll(request);
+                LOGGER.debug("found task size {}", tasks.getTasksList().size());
                 List<Task> tasksList = tasks.getTasksList();
                 for (Task task : tasksList) {
                     Map<String, Value> dataMap = task.getDataMap();
@@ -84,6 +90,7 @@ public class Poller {
             try{
                 TaskResultPushResponse response = Poller.this.client.getClient().push(result);
                 boolean status = response.getStatus();
+                LOGGER.debug("task result submit status {}",status);
                 if(!status){
                     //retry
                 }

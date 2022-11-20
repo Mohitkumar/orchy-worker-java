@@ -15,7 +15,7 @@
         "nested":{
           "key1":"d1",
           "key2":"$.input.nest.k1",
-          "list":[23,{"nest":{"k":21}}]
+          "list":[23,{"nest":{"k":"$.input.nest.k1"}},"$.input.k2",{"list":["internal","$.input.nest.k1"]}]
         }
       },
       "next":{"default":2}

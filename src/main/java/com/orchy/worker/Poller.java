@@ -33,7 +33,8 @@ public class Poller {
     }
 
     public void start(){
-        scheduledExecutorService.scheduleAtFixedRate(new PollerWorker(),0,worker.getPollInterval(), TimeUnit.SECONDS);
+        scheduledExecutorService.scheduleAtFixedRate(new PollerWorker(),0,
+                worker.getPollInterval(), worker.getPollIntervalTimeUnit());
     }
 
     public void stop(){

@@ -4,6 +4,7 @@ import com.orchy.worker.Worker;
 import com.orchy.worker.WorkerManager;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class Main {
@@ -19,10 +20,10 @@ public class Main {
         };
         Worker worker1 = Worker
                 .newBuilder()
-                .DefaultWorker(addDataFn,"add-data-worker", 2,1).build();
+                .DefaultWorker(addDataFn,"add-data-worker", 2,10, TimeUnit.MICROSECONDS).build();
         Worker worker2 = Worker
                 .newBuilder()
-                .DefaultWorker(printFn,"print-worker", 2,1).build();
+                .DefaultWorker(printFn,"print-worker", 2,10,TimeUnit.MICROSECONDS).build();
         WorkerManager manager = new WorkerManager("localhost",8099);
         manager.registerWorker(worker1,1);
         manager.registerWorker(worker2,1);

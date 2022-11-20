@@ -2,6 +2,7 @@ package com.orchy.worker;
 
 import java.time.Duration;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 public class Worker {
@@ -13,16 +14,20 @@ public class Worker {
 
     private int pollInterval;
 
+    private TimeUnit pollIntervalTimeUnit;
+
     private int retryCount;
     private int retryAfterSeconds;
     private int timeoutSeconds ;
     private RetryPolicy retryPolicy;
 
-    private Worker(Function<Map<String, Object>, Map<String, Object>> fn, String name, int batchSize, int pollInterval) {
+    private Worker(Function<Map<String, Object>, Map<String, Object>> fn, String name,
+                   int batchSize, int pollInterval, TimeUnit pollIntervalTimeUnit) {
         this.fn = fn;
         this.name = name;
         this.batchSize = batchSize;
         this.pollInterval = pollInterval;
+        this.pollIntervalTimeUnit = pollIntervalTimeUnit;
     }
 
     public Map<String, Object> execute(Map<String, Object> input){
@@ -57,6 +62,10 @@ public class Worker {
         return timeoutSeconds;
     }
 
+    public TimeUnit getPollIntervalTimeUnit() {
+        return pollIntervalTimeUnit;
+    }
+
     public static Builder newBuilder(){
         return new Builder();
     }
@@ -64,8 +73,8 @@ public class Worker {
         private Worker worker;
 
         public Builder DefaultWorker(Function<Map<String, Object>, Map<String, Object>> fn, String name,
-                   int batchSize, int pollInterval){
-            this.worker = new Worker(fn,name,batchSize, pollInterval);
+                                     int batchSize, int pollInterval, TimeUnit pollIntervalTimeUnit){
+            this.worker = new Worker(fn,name,batchSize, pollInterval,pollIntervalTimeUnit);
             this.worker.retryCount = 3;
             this.worker.retryAfterSeconds = 5;
             this.worker.timeoutSeconds = 10;

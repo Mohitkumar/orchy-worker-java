@@ -20,48 +20,48 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.4.0)",
     comments = "Source: flow.proto")
-public final class TaskServiceGrpc {
+public final class ActionServiceGrpc {
 
-  private TaskServiceGrpc() {}
+  private ActionServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "TaskService";
+  public static final String SERVICE_NAME = "ActionService";
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.TaskDef,
-      io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse> METHOD_SAVE_TASK_DEF =
-      io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.TaskDef, io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse>newBuilder()
+  public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.ActionDefinition,
+      io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse> METHOD_SAVE_ACTION_DEFINITION =
+      io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.ActionDefinition, io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "TaskService", "SaveTaskDef"))
+              "ActionService", "SaveActionDefinition"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.github.mohitkumar.orchy.api.v1.TaskDef.getDefaultInstance()))
+              io.github.mohitkumar.orchy.api.v1.ActionDefinition.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse.getDefaultInstance()))
+              io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.TaskPollRequest,
-      io.github.mohitkumar.orchy.api.v1.Tasks> METHOD_POLL =
-      io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.TaskPollRequest, io.github.mohitkumar.orchy.api.v1.Tasks>newBuilder()
+  public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.ActionPollRequest,
+      io.github.mohitkumar.orchy.api.v1.Actions> METHOD_POLL =
+      io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.ActionPollRequest, io.github.mohitkumar.orchy.api.v1.Actions>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "TaskService", "Poll"))
+              "ActionService", "Poll"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.github.mohitkumar.orchy.api.v1.TaskPollRequest.getDefaultInstance()))
+              io.github.mohitkumar.orchy.api.v1.ActionPollRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.github.mohitkumar.orchy.api.v1.Tasks.getDefaultInstance()))
+              io.github.mohitkumar.orchy.api.v1.Actions.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.TaskResult,
-      io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse> METHOD_PUSH =
-      io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.TaskResult, io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse>newBuilder()
+  public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.ActionResult,
+      io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse> METHOD_PUSH =
+      io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.ActionResult, io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "TaskService", "Push"))
+              "ActionService", "Push"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.github.mohitkumar.orchy.api.v1.TaskResult.getDefaultInstance()))
+              io.github.mohitkumar.orchy.api.v1.ActionResult.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-              io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.getDefaultInstance()))
+              io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.getDefaultInstance()))
           .build();
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   public static final io.grpc.MethodDescriptor<io.github.mohitkumar.orchy.api.v1.GetServersRequest,
@@ -69,7 +69,7 @@ public final class TaskServiceGrpc {
       io.grpc.MethodDescriptor.<io.github.mohitkumar.orchy.api.v1.GetServersRequest, io.github.mohitkumar.orchy.api.v1.GetServersResponse>newBuilder()
           .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
           .setFullMethodName(generateFullMethodName(
-              "TaskService", "GetServers"))
+              "ActionService", "GetServers"))
           .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
               io.github.mohitkumar.orchy.api.v1.GetServersRequest.getDefaultInstance()))
           .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
@@ -79,48 +79,48 @@ public final class TaskServiceGrpc {
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static TaskServiceStub newStub(io.grpc.Channel channel) {
-    return new TaskServiceStub(channel);
+  public static ActionServiceStub newStub(io.grpc.Channel channel) {
+    return new ActionServiceStub(channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static TaskServiceBlockingStub newBlockingStub(
+  public static ActionServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    return new TaskServiceBlockingStub(channel);
+    return new ActionServiceBlockingStub(channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static TaskServiceFutureStub newFutureStub(
+  public static ActionServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    return new TaskServiceFutureStub(channel);
+    return new ActionServiceFutureStub(channel);
   }
 
   /**
    */
-  public static abstract class TaskServiceImplBase implements io.grpc.BindableService {
+  public static abstract class ActionServiceImplBase implements io.grpc.BindableService {
 
     /**
      */
-    public void saveTaskDef(io.github.mohitkumar.orchy.api.v1.TaskDef request,
-        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(METHOD_SAVE_TASK_DEF, responseObserver);
+    public void saveActionDefinition(io.github.mohitkumar.orchy.api.v1.ActionDefinition request,
+        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(METHOD_SAVE_ACTION_DEFINITION, responseObserver);
     }
 
     /**
      */
-    public void poll(io.github.mohitkumar.orchy.api.v1.TaskPollRequest request,
-        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.Tasks> responseObserver) {
+    public void poll(io.github.mohitkumar.orchy.api.v1.ActionPollRequest request,
+        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.Actions> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_POLL, responseObserver);
     }
 
     /**
      */
-    public void push(io.github.mohitkumar.orchy.api.v1.TaskResult request,
-        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse> responseObserver) {
+    public void push(io.github.mohitkumar.orchy.api.v1.ActionResult request,
+        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_PUSH, responseObserver);
     }
 
@@ -134,25 +134,25 @@ public final class TaskServiceGrpc {
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            METHOD_SAVE_TASK_DEF,
+            METHOD_SAVE_ACTION_DEFINITION,
             asyncUnaryCall(
               new MethodHandlers<
-                io.github.mohitkumar.orchy.api.v1.TaskDef,
-                io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse>(
-                  this, METHODID_SAVE_TASK_DEF)))
+                io.github.mohitkumar.orchy.api.v1.ActionDefinition,
+                io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse>(
+                  this, METHODID_SAVE_ACTION_DEFINITION)))
           .addMethod(
             METHOD_POLL,
             asyncUnaryCall(
               new MethodHandlers<
-                io.github.mohitkumar.orchy.api.v1.TaskPollRequest,
-                io.github.mohitkumar.orchy.api.v1.Tasks>(
+                io.github.mohitkumar.orchy.api.v1.ActionPollRequest,
+                io.github.mohitkumar.orchy.api.v1.Actions>(
                   this, METHODID_POLL)))
           .addMethod(
             METHOD_PUSH,
             asyncUnaryCall(
               new MethodHandlers<
-                io.github.mohitkumar.orchy.api.v1.TaskResult,
-                io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse>(
+                io.github.mohitkumar.orchy.api.v1.ActionResult,
+                io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse>(
                   this, METHODID_PUSH)))
           .addMethod(
             METHOD_GET_SERVERS,
@@ -167,42 +167,42 @@ public final class TaskServiceGrpc {
 
   /**
    */
-  public static final class TaskServiceStub extends io.grpc.stub.AbstractStub<TaskServiceStub> {
-    private TaskServiceStub(io.grpc.Channel channel) {
+  public static final class ActionServiceStub extends io.grpc.stub.AbstractStub<ActionServiceStub> {
+    private ActionServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private TaskServiceStub(io.grpc.Channel channel,
+    private ActionServiceStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TaskServiceStub build(io.grpc.Channel channel,
+    protected ActionServiceStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new TaskServiceStub(channel, callOptions);
+      return new ActionServiceStub(channel, callOptions);
     }
 
     /**
      */
-    public void saveTaskDef(io.github.mohitkumar.orchy.api.v1.TaskDef request,
-        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse> responseObserver) {
+    public void saveActionDefinition(io.github.mohitkumar.orchy.api.v1.ActionDefinition request,
+        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(METHOD_SAVE_TASK_DEF, getCallOptions()), request, responseObserver);
+          getChannel().newCall(METHOD_SAVE_ACTION_DEFINITION, getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void poll(io.github.mohitkumar.orchy.api.v1.TaskPollRequest request,
-        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.Tasks> responseObserver) {
+    public void poll(io.github.mohitkumar.orchy.api.v1.ActionPollRequest request,
+        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.Actions> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_POLL, getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void push(io.github.mohitkumar.orchy.api.v1.TaskResult request,
-        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse> responseObserver) {
+    public void push(io.github.mohitkumar.orchy.api.v1.ActionResult request,
+        io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(METHOD_PUSH, getCallOptions()), request, responseObserver);
     }
@@ -218,39 +218,39 @@ public final class TaskServiceGrpc {
 
   /**
    */
-  public static final class TaskServiceBlockingStub extends io.grpc.stub.AbstractStub<TaskServiceBlockingStub> {
-    private TaskServiceBlockingStub(io.grpc.Channel channel) {
+  public static final class ActionServiceBlockingStub extends io.grpc.stub.AbstractStub<ActionServiceBlockingStub> {
+    private ActionServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private TaskServiceBlockingStub(io.grpc.Channel channel,
+    private ActionServiceBlockingStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TaskServiceBlockingStub build(io.grpc.Channel channel,
+    protected ActionServiceBlockingStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new TaskServiceBlockingStub(channel, callOptions);
+      return new ActionServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
-    public io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse saveTaskDef(io.github.mohitkumar.orchy.api.v1.TaskDef request) {
+    public io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse saveActionDefinition(io.github.mohitkumar.orchy.api.v1.ActionDefinition request) {
       return blockingUnaryCall(
-          getChannel(), METHOD_SAVE_TASK_DEF, getCallOptions(), request);
+          getChannel(), METHOD_SAVE_ACTION_DEFINITION, getCallOptions(), request);
     }
 
     /**
      */
-    public io.github.mohitkumar.orchy.api.v1.Tasks poll(io.github.mohitkumar.orchy.api.v1.TaskPollRequest request) {
+    public io.github.mohitkumar.orchy.api.v1.Actions poll(io.github.mohitkumar.orchy.api.v1.ActionPollRequest request) {
       return blockingUnaryCall(
           getChannel(), METHOD_POLL, getCallOptions(), request);
     }
 
     /**
      */
-    public io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse push(io.github.mohitkumar.orchy.api.v1.TaskResult request) {
+    public io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse push(io.github.mohitkumar.orchy.api.v1.ActionResult request) {
       return blockingUnaryCall(
           getChannel(), METHOD_PUSH, getCallOptions(), request);
     }
@@ -265,42 +265,42 @@ public final class TaskServiceGrpc {
 
   /**
    */
-  public static final class TaskServiceFutureStub extends io.grpc.stub.AbstractStub<TaskServiceFutureStub> {
-    private TaskServiceFutureStub(io.grpc.Channel channel) {
+  public static final class ActionServiceFutureStub extends io.grpc.stub.AbstractStub<ActionServiceFutureStub> {
+    private ActionServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private TaskServiceFutureStub(io.grpc.Channel channel,
+    private ActionServiceFutureStub(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected TaskServiceFutureStub build(io.grpc.Channel channel,
+    protected ActionServiceFutureStub build(io.grpc.Channel channel,
         io.grpc.CallOptions callOptions) {
-      return new TaskServiceFutureStub(channel, callOptions);
+      return new ActionServiceFutureStub(channel, callOptions);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse> saveTaskDef(
-        io.github.mohitkumar.orchy.api.v1.TaskDef request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse> saveActionDefinition(
+        io.github.mohitkumar.orchy.api.v1.ActionDefinition request) {
       return futureUnaryCall(
-          getChannel().newCall(METHOD_SAVE_TASK_DEF, getCallOptions()), request);
+          getChannel().newCall(METHOD_SAVE_ACTION_DEFINITION, getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.github.mohitkumar.orchy.api.v1.Tasks> poll(
-        io.github.mohitkumar.orchy.api.v1.TaskPollRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.github.mohitkumar.orchy.api.v1.Actions> poll(
+        io.github.mohitkumar.orchy.api.v1.ActionPollRequest request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_POLL, getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse> push(
-        io.github.mohitkumar.orchy.api.v1.TaskResult request) {
+    public com.google.common.util.concurrent.ListenableFuture<io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse> push(
+        io.github.mohitkumar.orchy.api.v1.ActionResult request) {
       return futureUnaryCall(
           getChannel().newCall(METHOD_PUSH, getCallOptions()), request);
     }
@@ -314,7 +314,7 @@ public final class TaskServiceGrpc {
     }
   }
 
-  private static final int METHODID_SAVE_TASK_DEF = 0;
+  private static final int METHODID_SAVE_ACTION_DEFINITION = 0;
   private static final int METHODID_POLL = 1;
   private static final int METHODID_PUSH = 2;
   private static final int METHODID_GET_SERVERS = 3;
@@ -324,10 +324,10 @@ public final class TaskServiceGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final TaskServiceImplBase serviceImpl;
+    private final ActionServiceImplBase serviceImpl;
     private final int methodId;
 
-    MethodHandlers(TaskServiceImplBase serviceImpl, int methodId) {
+    MethodHandlers(ActionServiceImplBase serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -336,17 +336,17 @@ public final class TaskServiceGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_SAVE_TASK_DEF:
-          serviceImpl.saveTaskDef((io.github.mohitkumar.orchy.api.v1.TaskDef) request,
-              (io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.TaskDefSaveResponse>) responseObserver);
+        case METHODID_SAVE_ACTION_DEFINITION:
+          serviceImpl.saveActionDefinition((io.github.mohitkumar.orchy.api.v1.ActionDefinition) request,
+              (io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.ActionDefinitionSaveResponse>) responseObserver);
           break;
         case METHODID_POLL:
-          serviceImpl.poll((io.github.mohitkumar.orchy.api.v1.TaskPollRequest) request,
-              (io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.Tasks>) responseObserver);
+          serviceImpl.poll((io.github.mohitkumar.orchy.api.v1.ActionPollRequest) request,
+              (io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.Actions>) responseObserver);
           break;
         case METHODID_PUSH:
-          serviceImpl.push((io.github.mohitkumar.orchy.api.v1.TaskResult) request,
-              (io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse>) responseObserver);
+          serviceImpl.push((io.github.mohitkumar.orchy.api.v1.ActionResult) request,
+              (io.grpc.stub.StreamObserver<io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse>) responseObserver);
           break;
         case METHODID_GET_SERVERS:
           serviceImpl.getServers((io.github.mohitkumar.orchy.api.v1.GetServersRequest) request,
@@ -368,7 +368,7 @@ public final class TaskServiceGrpc {
     }
   }
 
-  private static final class TaskServiceDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
+  private static final class ActionServiceDescriptorSupplier implements io.grpc.protobuf.ProtoFileDescriptorSupplier {
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
       return io.github.mohitkumar.orchy.api.v1.Orchy.getDescriptor();
@@ -380,12 +380,12 @@ public final class TaskServiceGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (TaskServiceGrpc.class) {
+      synchronized (ActionServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new TaskServiceDescriptorSupplier())
-              .addMethod(METHOD_SAVE_TASK_DEF)
+              .setSchemaDescriptor(new ActionServiceDescriptorSupplier())
+              .addMethod(METHOD_SAVE_ACTION_DEFINITION)
               .addMethod(METHOD_POLL)
               .addMethod(METHOD_PUSH)
               .addMethod(METHOD_GET_SERVERS)

@@ -3,8 +3,8 @@
 
 package io.github.mohitkumar.orchy.api.v1;
 
-public interface TaskDefOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:TaskDef)
+public interface ActionDefinitionOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ActionDefinition)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -3,8 +3,8 @@
 
 package io.github.mohitkumar.orchy.api.v1;
 
-public interface TaskResultOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:TaskResult)
+public interface ActionResultOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ActionResult)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -18,14 +18,14 @@ public interface TaskResultOrBuilder extends
       getWorkflowNameBytes();
 
   /**
-   * <code>string taskName = 2;</code>
+   * <code>string actionName = 2;</code>
    */
-  java.lang.String getTaskName();
+  java.lang.String getActionName();
   /**
-   * <code>string taskName = 2;</code>
+   * <code>string actionName = 2;</code>
    */
   com.google.protobuf.ByteString
-      getTaskNameBytes();
+      getActionNameBytes();
 
   /**
    * <code>string flowId = 3;</code>
@@ -77,13 +77,13 @@ public interface TaskResultOrBuilder extends
       java.lang.String key);
 
   /**
-   * <code>.TaskResult.Status status = 6;</code>
+   * <code>.ActionResult.Status status = 6;</code>
    */
   int getStatusValue();
   /**
-   * <code>.TaskResult.Status status = 6;</code>
+   * <code>.ActionResult.Status status = 6;</code>
    */
-  io.github.mohitkumar.orchy.api.v1.TaskResult.Status getStatus();
+  io.github.mohitkumar.orchy.api.v1.ActionResult.Status getStatus();
 
   /**
    * <code>int32 retryCount = 7;</code>

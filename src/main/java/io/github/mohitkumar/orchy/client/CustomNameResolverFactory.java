@@ -1,9 +1,9 @@
 package io.github.mohitkumar.orchy.client;
 
+import io.github.mohitkumar.orchy.api.v1.ActionServiceGrpc;
 import io.github.mohitkumar.orchy.api.v1.GetServersRequest;
 import io.github.mohitkumar.orchy.api.v1.GetServersResponse;
 import io.github.mohitkumar.orchy.api.v1.Server;
-import io.github.mohitkumar.orchy.api.v1.TaskServiceGrpc;
 import io.grpc.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class CustomNameResolverFactory extends NameResolver.Factory {
                 .forAddress(host, port)
                 .usePlaintext().build();
         GetServersRequest request  = GetServersRequest.newBuilder().build();
-        GetServersResponse servers = TaskServiceGrpc.newBlockingStub(managedChannel).getServers(request);
+        GetServersResponse servers = ActionServiceGrpc.newBlockingStub(managedChannel).getServers(request);
         List<io.github.mohitkumar.orchy.api.v1.Server> serversList = servers.getServersList();
         LOGGER.info("connecting to cluster nodes={}", servers);
         for (io.github.mohitkumar.orchy.api.v1.Server server : serversList) {
@@ -62,7 +62,7 @@ public class CustomNameResolverFactory extends NameResolver.Factory {
             public void refresh() {
                 List<EquivalentAddressGroup> addresses = new ArrayList<>();
                 GetServersRequest request  = GetServersRequest.newBuilder().build();
-                GetServersResponse servers = TaskServiceGrpc.newBlockingStub(managedChannel).getServers(request);
+                GetServersResponse servers = ActionServiceGrpc.newBlockingStub(managedChannel).getServers(request);
                 List<io.github.mohitkumar.orchy.api.v1.Server> serversList = servers.getServersList();
                 for (Server server : serversList) {
                     String rpcAddr = server.getRpcAddr();

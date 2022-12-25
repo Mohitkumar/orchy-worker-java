@@ -3,8 +3,8 @@
 
 package io.github.mohitkumar.orchy.api.v1;
 
-public interface TaskOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:Task)
+public interface ActionOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:Action)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -67,14 +67,14 @@ public interface TaskOrBuilder extends
   int getActionId();
 
   /**
-   * <code>string taskName = 5;</code>
+   * <code>string actionName = 5;</code>
    */
-  java.lang.String getTaskName();
+  java.lang.String getActionName();
   /**
-   * <code>string taskName = 5;</code>
+   * <code>string actionName = 5;</code>
    */
   com.google.protobuf.ByteString
-      getTaskNameBytes();
+      getActionNameBytes();
 
   /**
    * <code>int32 retryCount = 6;</code>

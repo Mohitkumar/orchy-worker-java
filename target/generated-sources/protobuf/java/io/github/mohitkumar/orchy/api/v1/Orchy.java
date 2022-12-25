@@ -15,50 +15,50 @@ public final class Orchy {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Task_descriptor;
+    internal_static_Action_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Task_fieldAccessorTable;
+      internal_static_Action_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Task_DataEntry_descriptor;
+    internal_static_Action_DataEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Task_DataEntry_fieldAccessorTable;
+      internal_static_Action_DataEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Tasks_descriptor;
+    internal_static_Actions_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Tasks_fieldAccessorTable;
+      internal_static_Actions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TaskResult_descriptor;
+    internal_static_ActionResult_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TaskResult_fieldAccessorTable;
+      internal_static_ActionResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TaskResult_DataEntry_descriptor;
+    internal_static_ActionResult_DataEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TaskResult_DataEntry_fieldAccessorTable;
+      internal_static_ActionResult_DataEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TaskDef_descriptor;
+    internal_static_ActionDefinition_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TaskDef_fieldAccessorTable;
+      internal_static_ActionDefinition_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TaskDefSaveResponse_descriptor;
+    internal_static_ActionDefinitionSaveResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TaskDefSaveResponse_fieldAccessorTable;
+      internal_static_ActionDefinitionSaveResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TaskPollRequest_descriptor;
+    internal_static_ActionPollRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TaskPollRequest_fieldAccessorTable;
+      internal_static_ActionPollRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_TaskResultPushResponse_descriptor;
+    internal_static_ActionResultPushResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_TaskResultPushResponse_fieldAccessorTable;
+      internal_static_ActionResultPushResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_Server_descriptor;
   static final 
@@ -84,35 +84,37 @@ public final class Orchy {
   static {
     java.lang.String[] descriptorData = {
       "\n\nflow.proto\032\034google/protobuf/struct.pro" +
-      "to\"\310\001\n\004Task\022\024\n\014workflowName\030\001 \001(\t\022\016\n\006flo" +
-      "wId\030\002 \001(\t\022\035\n\004data\030\003 \003(\0132\017.Task.DataEntry" +
-      "\022\020\n\010actionId\030\004 \001(\005\022\020\n\010taskName\030\005 \001(\t\022\022\n\n" +
-      "retryCount\030\006 \001(\005\032C\n\tDataEntry\022\013\n\003key\030\001 \001" +
-      "(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Valu" +
-      "e:\0028\001\"\035\n\005Tasks\022\024\n\005tasks\030\001 \003(\0132\005.Task\"\231\002\n" +
-      "\nTaskResult\022\024\n\014workflowName\030\001 \001(\t\022\020\n\010tas" +
-      "kName\030\002 \001(\t\022\016\n\006flowId\030\003 \001(\t\022\020\n\010actionId\030" +
-      "\004 \001(\005\022#\n\004data\030\005 \003(\0132\025.TaskResult.DataEnt",
-      "ry\022\"\n\006status\030\006 \001(\0162\022.TaskResult.Status\022\022" +
-      "\n\nretryCount\030\007 \001(\005\032C\n\tDataEntry\022\013\n\003key\030\001" +
-      " \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Va" +
-      "lue:\0028\001\"\037\n\006Status\022\013\n\007SUCCESS\020\000\022\010\n\004FAIL\020\001" +
-      "\"s\n\007TaskDef\022\014\n\004name\030\001 \001(\t\022\022\n\nretryCount\030" +
-      "\002 \001(\005\022\031\n\021retryAfterSeconds\030\003 \001(\005\022\023\n\013retr" +
-      "yPolicy\030\004 \001(\t\022\026\n\016timeoutSeconds\030\005 \001(\005\"%\n" +
-      "\023TaskDefSaveResponse\022\016\n\006status\030\001 \001(\010\"6\n\017" +
-      "TaskPollRequest\022\020\n\010taskType\030\001 \001(\t\022\021\n\tbat" +
-      "chSize\030\002 \001(\005\"(\n\026TaskResultPushResponse\022\016",
-      "\n\006status\030\001 \001(\010\"&\n\006Server\022\n\n\002id\030\001 \001(\t\022\020\n\010" +
-      "rpc_addr\030\002 \001(\t\"\023\n\021GetServersRequest\".\n\022G" +
-      "etServersResponse\022\030\n\007servers\030\001 \003(\0132\007.Ser" +
-      "ver2\313\001\n\013TaskService\022/\n\013SaveTaskDef\022\010.Tas" +
-      "kDef\032\024.TaskDefSaveResponse\"\000\022\"\n\004Poll\022\020.T" +
-      "askPollRequest\032\006.Tasks\"\000\022.\n\004Push\022\013.TaskR" +
-      "esult\032\027.TaskResultPushResponse\"\000\0227\n\nGetS" +
-      "ervers\022\022.GetServersRequest\032\023.GetServersR" +
-      "esponse\"\000B2\n!io.github.mohitkumar.orchy." +
-      "api.v1B\005OrchyP\001\242\002\003ORCb\006proto3"
+      "to\"\316\001\n\006Action\022\024\n\014workflowName\030\001 \001(\t\022\016\n\006f" +
+      "lowId\030\002 \001(\t\022\037\n\004data\030\003 \003(\0132\021.Action.DataE" +
+      "ntry\022\020\n\010actionId\030\004 \001(\005\022\022\n\nactionName\030\005 \001" +
+      "(\t\022\022\n\nretryCount\030\006 \001(\005\032C\n\tDataEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobu" +
+      "f.Value:\0028\001\"#\n\007Actions\022\030\n\007actions\030\001 \003(\0132" +
+      "\007.Action\"\241\002\n\014ActionResult\022\024\n\014workflowNam" +
+      "e\030\001 \001(\t\022\022\n\nactionName\030\002 \001(\t\022\016\n\006flowId\030\003 " +
+      "\001(\t\022\020\n\010actionId\030\004 \001(\005\022%\n\004data\030\005 \003(\0132\027.Ac",
+      "tionResult.DataEntry\022$\n\006status\030\006 \001(\0162\024.A" +
+      "ctionResult.Status\022\022\n\nretryCount\030\007 \001(\005\032C" +
+      "\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132" +
+      "\026.google.protobuf.Value:\0028\001\"\037\n\006Status\022\013\n" +
+      "\007SUCCESS\020\000\022\010\n\004FAIL\020\001\"|\n\020ActionDefinition" +
+      "\022\014\n\004name\030\001 \001(\t\022\022\n\nretryCount\030\002 \001(\005\022\031\n\021re" +
+      "tryAfterSeconds\030\003 \001(\005\022\023\n\013retryPolicy\030\004 \001" +
+      "(\t\022\026\n\016timeoutSeconds\030\005 \001(\005\".\n\034ActionDefi" +
+      "nitionSaveResponse\022\016\n\006status\030\001 \001(\010\":\n\021Ac" +
+      "tionPollRequest\022\022\n\nactionType\030\001 \001(\t\022\021\n\tb",
+      "atchSize\030\002 \001(\005\"*\n\030ActionResultPushRespon" +
+      "se\022\016\n\006status\030\001 \001(\010\"&\n\006Server\022\n\n\002id\030\001 \001(\t" +
+      "\022\020\n\010rpc_addr\030\002 \001(\t\"\023\n\021GetServersRequest\"" +
+      ".\n\022GetServersResponse\022\030\n\007servers\030\001 \003(\0132\007" +
+      ".Server2\360\001\n\rActionService\022J\n\024SaveActionD" +
+      "efinition\022\021.ActionDefinition\032\035.ActionDef" +
+      "initionSaveResponse\"\000\022&\n\004Poll\022\022.ActionPo" +
+      "llRequest\032\010.Actions\"\000\0222\n\004Push\022\r.ActionRe" +
+      "sult\032\031.ActionResultPushResponse\"\000\0227\n\nGet" +
+      "Servers\022\022.GetServersRequest\032\023.GetServers",
+      "Response\"\000B2\n!io.github.mohitkumar.orchy" +
+      ".api.v1B\005OrchyP\001\242\002\003ORCb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -127,59 +129,59 @@ public final class Orchy {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.StructProto.getDescriptor(),
         }, assigner);
-    internal_static_Task_descriptor =
+    internal_static_Action_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_Task_fieldAccessorTable = new
+    internal_static_Action_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Task_descriptor,
-        new java.lang.String[] { "WorkflowName", "FlowId", "Data", "ActionId", "TaskName", "RetryCount", });
-    internal_static_Task_DataEntry_descriptor =
-      internal_static_Task_descriptor.getNestedTypes().get(0);
-    internal_static_Task_DataEntry_fieldAccessorTable = new
+        internal_static_Action_descriptor,
+        new java.lang.String[] { "WorkflowName", "FlowId", "Data", "ActionId", "ActionName", "RetryCount", });
+    internal_static_Action_DataEntry_descriptor =
+      internal_static_Action_descriptor.getNestedTypes().get(0);
+    internal_static_Action_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Task_DataEntry_descriptor,
+        internal_static_Action_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_Tasks_descriptor =
+    internal_static_Actions_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_Tasks_fieldAccessorTable = new
+    internal_static_Actions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Tasks_descriptor,
-        new java.lang.String[] { "Tasks", });
-    internal_static_TaskResult_descriptor =
+        internal_static_Actions_descriptor,
+        new java.lang.String[] { "Actions", });
+    internal_static_ActionResult_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_TaskResult_fieldAccessorTable = new
+    internal_static_ActionResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TaskResult_descriptor,
-        new java.lang.String[] { "WorkflowName", "TaskName", "FlowId", "ActionId", "Data", "Status", "RetryCount", });
-    internal_static_TaskResult_DataEntry_descriptor =
-      internal_static_TaskResult_descriptor.getNestedTypes().get(0);
-    internal_static_TaskResult_DataEntry_fieldAccessorTable = new
+        internal_static_ActionResult_descriptor,
+        new java.lang.String[] { "WorkflowName", "ActionName", "FlowId", "ActionId", "Data", "Status", "RetryCount", });
+    internal_static_ActionResult_DataEntry_descriptor =
+      internal_static_ActionResult_descriptor.getNestedTypes().get(0);
+    internal_static_ActionResult_DataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TaskResult_DataEntry_descriptor,
+        internal_static_ActionResult_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_TaskDef_descriptor =
+    internal_static_ActionDefinition_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_TaskDef_fieldAccessorTable = new
+    internal_static_ActionDefinition_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TaskDef_descriptor,
+        internal_static_ActionDefinition_descriptor,
         new java.lang.String[] { "Name", "RetryCount", "RetryAfterSeconds", "RetryPolicy", "TimeoutSeconds", });
-    internal_static_TaskDefSaveResponse_descriptor =
+    internal_static_ActionDefinitionSaveResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_TaskDefSaveResponse_fieldAccessorTable = new
+    internal_static_ActionDefinitionSaveResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TaskDefSaveResponse_descriptor,
+        internal_static_ActionDefinitionSaveResponse_descriptor,
         new java.lang.String[] { "Status", });
-    internal_static_TaskPollRequest_descriptor =
+    internal_static_ActionPollRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_TaskPollRequest_fieldAccessorTable = new
+    internal_static_ActionPollRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TaskPollRequest_descriptor,
-        new java.lang.String[] { "TaskType", "BatchSize", });
-    internal_static_TaskResultPushResponse_descriptor =
+        internal_static_ActionPollRequest_descriptor,
+        new java.lang.String[] { "ActionType", "BatchSize", });
+    internal_static_ActionResultPushResponse_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_TaskResultPushResponse_fieldAccessorTable = new
+    internal_static_ActionResultPushResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_TaskResultPushResponse_descriptor,
+        internal_static_ActionResultPushResponse_descriptor,
         new java.lang.String[] { "Status", });
     internal_static_Server_descriptor =
       getDescriptor().getMessageTypes().get(7);

@@ -4,22 +4,21 @@
 package io.github.mohitkumar.orchy.api.v1;
 
 /**
- * Protobuf type {@code TaskResult}
+ * Protobuf type {@code Action}
  */
-public  final class TaskResult extends
+public  final class Action extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:TaskResult)
-    TaskResultOrBuilder {
-  // Use TaskResult.newBuilder() to construct.
-  private TaskResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:Action)
+    ActionOrBuilder {
+  // Use Action.newBuilder() to construct.
+  private Action(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaskResult() {
+  private Action() {
     workflowName_ = "";
-    taskName_ = "";
     flowId_ = "";
     actionId_ = 0;
-    status_ = 0;
+    actionName_ = "";
     retryCount_ = 0;
   }
 
@@ -28,7 +27,7 @@ public  final class TaskResult extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private TaskResult(
+  private Action(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -57,25 +56,14 @@ public  final class TaskResult extends
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
             flowId_ = s;
             break;
           }
-          case 32: {
-
-            actionId_ = input.readInt32();
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          case 26: {
+            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
               data_ = com.google.protobuf.MapField.newMapField(
                   DataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
+              mutable_bitField0_ |= 0x00000004;
             }
             com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
             data__ = input.readMessage(
@@ -84,13 +72,18 @@ public  final class TaskResult extends
                 data__.getKey(), data__.getValue());
             break;
           }
-          case 48: {
-            int rawValue = input.readEnum();
+          case 32: {
 
-            status_ = rawValue;
+            actionId_ = input.readInt32();
             break;
           }
-          case 56: {
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            actionName_ = s;
+            break;
+          }
+          case 48: {
 
             retryCount_ = input.readInt32();
             break;
@@ -108,14 +101,14 @@ public  final class TaskResult extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResult_descriptor;
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
   protected com.google.protobuf.MapField internalGetMapField(
       int number) {
     switch (number) {
-      case 5:
+      case 3:
         return internalGetData();
       default:
         throw new RuntimeException(
@@ -124,107 +117,9 @@ public  final class TaskResult extends
   }
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResult_fieldAccessorTable
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.github.mohitkumar.orchy.api.v1.TaskResult.class, io.github.mohitkumar.orchy.api.v1.TaskResult.Builder.class);
-  }
-
-  /**
-   * Protobuf enum {@code TaskResult.Status}
-   */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>SUCCESS = 0;</code>
-     */
-    SUCCESS(0),
-    /**
-     * <code>FAIL = 1;</code>
-     */
-    FAIL(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    /**
-     * <code>SUCCESS = 0;</code>
-     */
-    public static final int SUCCESS_VALUE = 0;
-    /**
-     * <code>FAIL = 1;</code>
-     */
-    public static final int FAIL_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static Status valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static Status forNumber(int value) {
-      switch (value) {
-        case 0: return SUCCESS;
-        case 1: return FAIL;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return io.github.mohitkumar.orchy.api.v1.TaskResult.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final Status[] VALUES = values();
-
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private Status(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:TaskResult.Status)
+            io.github.mohitkumar.orchy.api.v1.Action.class, io.github.mohitkumar.orchy.api.v1.Action.Builder.class);
   }
 
   private int bitField0_;
@@ -262,44 +157,10 @@ public  final class TaskResult extends
     }
   }
 
-  public static final int TASKNAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object taskName_;
-  /**
-   * <code>string taskName = 2;</code>
-   */
-  public java.lang.String getTaskName() {
-    java.lang.Object ref = taskName_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      taskName_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string taskName = 2;</code>
-   */
-  public com.google.protobuf.ByteString
-      getTaskNameBytes() {
-    java.lang.Object ref = taskName_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      taskName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int FLOWID_FIELD_NUMBER = 3;
+  public static final int FLOWID_FIELD_NUMBER = 2;
   private volatile java.lang.Object flowId_;
   /**
-   * <code>string flowId = 3;</code>
+   * <code>string flowId = 2;</code>
    */
   public java.lang.String getFlowId() {
     java.lang.Object ref = flowId_;
@@ -314,7 +175,7 @@ public  final class TaskResult extends
     }
   }
   /**
-   * <code>string flowId = 3;</code>
+   * <code>string flowId = 2;</code>
    */
   public com.google.protobuf.ByteString
       getFlowIdBytes() {
@@ -330,22 +191,13 @@ public  final class TaskResult extends
     }
   }
 
-  public static final int ACTIONID_FIELD_NUMBER = 4;
-  private int actionId_;
-  /**
-   * <code>int32 actionId = 4;</code>
-   */
-  public int getActionId() {
-    return actionId_;
-  }
-
-  public static final int DATA_FIELD_NUMBER = 5;
+  public static final int DATA_FIELD_NUMBER = 3;
   private static final class DataDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
         java.lang.String, com.google.protobuf.Value> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
-                io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResult_DataEntry_descriptor, 
+                io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_DataEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.MESSAGE,
@@ -366,7 +218,7 @@ public  final class TaskResult extends
     return internalGetData().getMap().size();
   }
   /**
-   * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
    */
 
   public boolean containsData(
@@ -382,14 +234,14 @@ public  final class TaskResult extends
     return getDataMap();
   }
   /**
-   * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
    */
 
   public java.util.Map<java.lang.String, com.google.protobuf.Value> getDataMap() {
     return internalGetData().getMap();
   }
   /**
-   * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
    */
 
   public com.google.protobuf.Value getDataOrDefault(
@@ -401,7 +253,7 @@ public  final class TaskResult extends
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
-   * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+   * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
    */
 
   public com.google.protobuf.Value getDataOrThrow(
@@ -415,26 +267,53 @@ public  final class TaskResult extends
     return map.get(key);
   }
 
-  public static final int STATUS_FIELD_NUMBER = 6;
-  private int status_;
+  public static final int ACTIONID_FIELD_NUMBER = 4;
+  private int actionId_;
   /**
-   * <code>.TaskResult.Status status = 6;</code>
+   * <code>int32 actionId = 4;</code>
    */
-  public int getStatusValue() {
-    return status_;
-  }
-  /**
-   * <code>.TaskResult.Status status = 6;</code>
-   */
-  public io.github.mohitkumar.orchy.api.v1.TaskResult.Status getStatus() {
-    io.github.mohitkumar.orchy.api.v1.TaskResult.Status result = io.github.mohitkumar.orchy.api.v1.TaskResult.Status.valueOf(status_);
-    return result == null ? io.github.mohitkumar.orchy.api.v1.TaskResult.Status.UNRECOGNIZED : result;
+  public int getActionId() {
+    return actionId_;
   }
 
-  public static final int RETRYCOUNT_FIELD_NUMBER = 7;
+  public static final int ACTIONNAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object actionName_;
+  /**
+   * <code>string actionName = 5;</code>
+   */
+  public java.lang.String getActionName() {
+    java.lang.Object ref = actionName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      actionName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string actionName = 5;</code>
+   */
+  public com.google.protobuf.ByteString
+      getActionNameBytes() {
+    java.lang.Object ref = actionName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      actionName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RETRYCOUNT_FIELD_NUMBER = 6;
   private int retryCount_;
   /**
-   * <code>int32 retryCount = 7;</code>
+   * <code>int32 retryCount = 6;</code>
    */
   public int getRetryCount() {
     return retryCount_;
@@ -455,26 +334,23 @@ public  final class TaskResult extends
     if (!getWorkflowNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, workflowName_);
     }
-    if (!getTaskNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, taskName_);
-    }
     if (!getFlowIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, flowId_);
-    }
-    if (actionId_ != 0) {
-      output.writeInt32(4, actionId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, flowId_);
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
         output,
         internalGetData(),
         DataDefaultEntryHolder.defaultEntry,
-        5);
-    if (status_ != io.github.mohitkumar.orchy.api.v1.TaskResult.Status.SUCCESS.getNumber()) {
-      output.writeEnum(6, status_);
+        3);
+    if (actionId_ != 0) {
+      output.writeInt32(4, actionId_);
+    }
+    if (!getActionNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, actionName_);
     }
     if (retryCount_ != 0) {
-      output.writeInt32(7, retryCount_);
+      output.writeInt32(6, retryCount_);
     }
   }
 
@@ -486,15 +362,8 @@ public  final class TaskResult extends
     if (!getWorkflowNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, workflowName_);
     }
-    if (!getTaskNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, taskName_);
-    }
     if (!getFlowIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, flowId_);
-    }
-    if (actionId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(4, actionId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, flowId_);
     }
     for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry
          : internalGetData().getMap().entrySet()) {
@@ -504,15 +373,18 @@ public  final class TaskResult extends
           .setValue(entry.getValue())
           .build();
       size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, data__);
+          .computeMessageSize(3, data__);
     }
-    if (status_ != io.github.mohitkumar.orchy.api.v1.TaskResult.Status.SUCCESS.getNumber()) {
+    if (actionId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, status_);
+        .computeInt32Size(4, actionId_);
+    }
+    if (!getActionNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, actionName_);
     }
     if (retryCount_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, retryCount_);
+        .computeInt32Size(6, retryCount_);
     }
     memoizedSize = size;
     return size;
@@ -524,23 +396,22 @@ public  final class TaskResult extends
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.TaskResult)) {
+    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.Action)) {
       return super.equals(obj);
     }
-    io.github.mohitkumar.orchy.api.v1.TaskResult other = (io.github.mohitkumar.orchy.api.v1.TaskResult) obj;
+    io.github.mohitkumar.orchy.api.v1.Action other = (io.github.mohitkumar.orchy.api.v1.Action) obj;
 
     boolean result = true;
     result = result && getWorkflowName()
         .equals(other.getWorkflowName());
-    result = result && getTaskName()
-        .equals(other.getTaskName());
     result = result && getFlowId()
         .equals(other.getFlowId());
-    result = result && (getActionId()
-        == other.getActionId());
     result = result && internalGetData().equals(
         other.internalGetData());
-    result = result && status_ == other.status_;
+    result = result && (getActionId()
+        == other.getActionId());
+    result = result && getActionName()
+        .equals(other.getActionName());
     result = result && (getRetryCount()
         == other.getRetryCount());
     return result;
@@ -555,18 +426,16 @@ public  final class TaskResult extends
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + WORKFLOWNAME_FIELD_NUMBER;
     hash = (53 * hash) + getWorkflowName().hashCode();
-    hash = (37 * hash) + TASKNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskName().hashCode();
     hash = (37 * hash) + FLOWID_FIELD_NUMBER;
     hash = (53 * hash) + getFlowId().hashCode();
-    hash = (37 * hash) + ACTIONID_FIELD_NUMBER;
-    hash = (53 * hash) + getActionId();
     if (!internalGetData().getMap().isEmpty()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetData().hashCode();
     }
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
+    hash = (37 * hash) + ACTIONID_FIELD_NUMBER;
+    hash = (53 * hash) + getActionId();
+    hash = (37 * hash) + ACTIONNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getActionName().hashCode();
     hash = (37 * hash) + RETRYCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getRetryCount();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -574,69 +443,69 @@ public  final class TaskResult extends
     return hash;
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(byte[] data)
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseDelimitedFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.Action parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseDelimitedFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.Action parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -648,7 +517,7 @@ public  final class TaskResult extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.TaskResult prototype) {
+  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.Action prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -663,22 +532,22 @@ public  final class TaskResult extends
     return builder;
   }
   /**
-   * Protobuf type {@code TaskResult}
+   * Protobuf type {@code Action}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:TaskResult)
-      io.github.mohitkumar.orchy.api.v1.TaskResultOrBuilder {
+      // @@protoc_insertion_point(builder_implements:Action)
+      io.github.mohitkumar.orchy.api.v1.ActionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResult_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 5:
+        case 3:
           return internalGetData();
         default:
           throw new RuntimeException(
@@ -689,7 +558,7 @@ public  final class TaskResult extends
     protected com.google.protobuf.MapField internalGetMutableMapField(
         int number) {
       switch (number) {
-        case 5:
+        case 3:
           return internalGetMutableData();
         default:
           throw new RuntimeException(
@@ -698,12 +567,12 @@ public  final class TaskResult extends
     }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResult_fieldAccessorTable
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.github.mohitkumar.orchy.api.v1.TaskResult.class, io.github.mohitkumar.orchy.api.v1.TaskResult.Builder.class);
+              io.github.mohitkumar.orchy.api.v1.Action.class, io.github.mohitkumar.orchy.api.v1.Action.Builder.class);
     }
 
-    // Construct using io.github.mohitkumar.orchy.api.v1.TaskResult.newBuilder()
+    // Construct using io.github.mohitkumar.orchy.api.v1.Action.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -722,14 +591,12 @@ public  final class TaskResult extends
       super.clear();
       workflowName_ = "";
 
-      taskName_ = "";
-
       flowId_ = "";
 
+      internalGetMutableData().clear();
       actionId_ = 0;
 
-      internalGetMutableData().clear();
-      status_ = 0;
+      actionName_ = "";
 
       retryCount_ = 0;
 
@@ -738,32 +605,31 @@ public  final class TaskResult extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResult_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_descriptor;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskResult getDefaultInstanceForType() {
-      return io.github.mohitkumar.orchy.api.v1.TaskResult.getDefaultInstance();
+    public io.github.mohitkumar.orchy.api.v1.Action getDefaultInstanceForType() {
+      return io.github.mohitkumar.orchy.api.v1.Action.getDefaultInstance();
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskResult build() {
-      io.github.mohitkumar.orchy.api.v1.TaskResult result = buildPartial();
+    public io.github.mohitkumar.orchy.api.v1.Action build() {
+      io.github.mohitkumar.orchy.api.v1.Action result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskResult buildPartial() {
-      io.github.mohitkumar.orchy.api.v1.TaskResult result = new io.github.mohitkumar.orchy.api.v1.TaskResult(this);
+    public io.github.mohitkumar.orchy.api.v1.Action buildPartial() {
+      io.github.mohitkumar.orchy.api.v1.Action result = new io.github.mohitkumar.orchy.api.v1.Action(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.workflowName_ = workflowName_;
-      result.taskName_ = taskName_;
       result.flowId_ = flowId_;
-      result.actionId_ = actionId_;
       result.data_ = internalGetData();
       result.data_.makeImmutable();
-      result.status_ = status_;
+      result.actionId_ = actionId_;
+      result.actionName_ = actionName_;
       result.retryCount_ = retryCount_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -797,35 +663,32 @@ public  final class TaskResult extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.github.mohitkumar.orchy.api.v1.TaskResult) {
-        return mergeFrom((io.github.mohitkumar.orchy.api.v1.TaskResult)other);
+      if (other instanceof io.github.mohitkumar.orchy.api.v1.Action) {
+        return mergeFrom((io.github.mohitkumar.orchy.api.v1.Action)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.TaskResult other) {
-      if (other == io.github.mohitkumar.orchy.api.v1.TaskResult.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.Action other) {
+      if (other == io.github.mohitkumar.orchy.api.v1.Action.getDefaultInstance()) return this;
       if (!other.getWorkflowName().isEmpty()) {
         workflowName_ = other.workflowName_;
-        onChanged();
-      }
-      if (!other.getTaskName().isEmpty()) {
-        taskName_ = other.taskName_;
         onChanged();
       }
       if (!other.getFlowId().isEmpty()) {
         flowId_ = other.flowId_;
         onChanged();
       }
+      internalGetMutableData().mergeFrom(
+          other.internalGetData());
       if (other.getActionId() != 0) {
         setActionId(other.getActionId());
       }
-      internalGetMutableData().mergeFrom(
-          other.internalGetData());
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (!other.getActionName().isEmpty()) {
+        actionName_ = other.actionName_;
+        onChanged();
       }
       if (other.getRetryCount() != 0) {
         setRetryCount(other.getRetryCount());
@@ -842,11 +705,11 @@ public  final class TaskResult extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.github.mohitkumar.orchy.api.v1.TaskResult parsedMessage = null;
+      io.github.mohitkumar.orchy.api.v1.Action parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.github.mohitkumar.orchy.api.v1.TaskResult) e.getUnfinishedMessage();
+        parsedMessage = (io.github.mohitkumar.orchy.api.v1.Action) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -926,78 +789,9 @@ public  final class TaskResult extends
       return this;
     }
 
-    private java.lang.Object taskName_ = "";
-    /**
-     * <code>string taskName = 2;</code>
-     */
-    public java.lang.String getTaskName() {
-      java.lang.Object ref = taskName_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        taskName_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string taskName = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getTaskNameBytes() {
-      java.lang.Object ref = taskName_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        taskName_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string taskName = 2;</code>
-     */
-    public Builder setTaskName(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      taskName_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string taskName = 2;</code>
-     */
-    public Builder clearTaskName() {
-      
-      taskName_ = getDefaultInstance().getTaskName();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string taskName = 2;</code>
-     */
-    public Builder setTaskNameBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      taskName_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object flowId_ = "";
     /**
-     * <code>string flowId = 3;</code>
+     * <code>string flowId = 2;</code>
      */
     public java.lang.String getFlowId() {
       java.lang.Object ref = flowId_;
@@ -1012,7 +806,7 @@ public  final class TaskResult extends
       }
     }
     /**
-     * <code>string flowId = 3;</code>
+     * <code>string flowId = 2;</code>
      */
     public com.google.protobuf.ByteString
         getFlowIdBytes() {
@@ -1028,7 +822,7 @@ public  final class TaskResult extends
       }
     }
     /**
-     * <code>string flowId = 3;</code>
+     * <code>string flowId = 2;</code>
      */
     public Builder setFlowId(
         java.lang.String value) {
@@ -1041,7 +835,7 @@ public  final class TaskResult extends
       return this;
     }
     /**
-     * <code>string flowId = 3;</code>
+     * <code>string flowId = 2;</code>
      */
     public Builder clearFlowId() {
       
@@ -1050,7 +844,7 @@ public  final class TaskResult extends
       return this;
     }
     /**
-     * <code>string flowId = 3;</code>
+     * <code>string flowId = 2;</code>
      */
     public Builder setFlowIdBytes(
         com.google.protobuf.ByteString value) {
@@ -1060,32 +854,6 @@ public  final class TaskResult extends
   checkByteStringIsUtf8(value);
       
       flowId_ = value;
-      onChanged();
-      return this;
-    }
-
-    private int actionId_ ;
-    /**
-     * <code>int32 actionId = 4;</code>
-     */
-    public int getActionId() {
-      return actionId_;
-    }
-    /**
-     * <code>int32 actionId = 4;</code>
-     */
-    public Builder setActionId(int value) {
-      
-      actionId_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 actionId = 4;</code>
-     */
-    public Builder clearActionId() {
-      
-      actionId_ = 0;
       onChanged();
       return this;
     }
@@ -1117,7 +885,7 @@ public  final class TaskResult extends
       return internalGetData().getMap().size();
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
 
     public boolean containsData(
@@ -1133,14 +901,14 @@ public  final class TaskResult extends
       return getDataMap();
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
 
     public java.util.Map<java.lang.String, com.google.protobuf.Value> getDataMap() {
       return internalGetData().getMap();
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
 
     public com.google.protobuf.Value getDataOrDefault(
@@ -1152,7 +920,7 @@ public  final class TaskResult extends
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
 
     public com.google.protobuf.Value getDataOrThrow(
@@ -1172,7 +940,7 @@ public  final class TaskResult extends
       return this;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
 
     public Builder removeData(
@@ -1191,7 +959,7 @@ public  final class TaskResult extends
       return internalGetMutableData().getMutableMap();
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
     public Builder putData(
         java.lang.String key,
@@ -1203,7 +971,7 @@ public  final class TaskResult extends
       return this;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; data = 5;</code>
+     * <code>map&lt;string, .google.protobuf.Value&gt; data = 3;</code>
      */
 
     public Builder putAllData(
@@ -1213,59 +981,110 @@ public  final class TaskResult extends
       return this;
     }
 
-    private int status_ = 0;
+    private int actionId_ ;
     /**
-     * <code>.TaskResult.Status status = 6;</code>
+     * <code>int32 actionId = 4;</code>
      */
-    public int getStatusValue() {
-      return status_;
+    public int getActionId() {
+      return actionId_;
     }
     /**
-     * <code>.TaskResult.Status status = 6;</code>
+     * <code>int32 actionId = 4;</code>
      */
-    public Builder setStatusValue(int value) {
-      status_ = value;
+    public Builder setActionId(int value) {
+      
+      actionId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.TaskResult.Status status = 6;</code>
+     * <code>int32 actionId = 4;</code>
      */
-    public io.github.mohitkumar.orchy.api.v1.TaskResult.Status getStatus() {
-      io.github.mohitkumar.orchy.api.v1.TaskResult.Status result = io.github.mohitkumar.orchy.api.v1.TaskResult.Status.valueOf(status_);
-      return result == null ? io.github.mohitkumar.orchy.api.v1.TaskResult.Status.UNRECOGNIZED : result;
+    public Builder clearActionId() {
+      
+      actionId_ = 0;
+      onChanged();
+      return this;
     }
+
+    private java.lang.Object actionName_ = "";
     /**
-     * <code>.TaskResult.Status status = 6;</code>
+     * <code>string actionName = 5;</code>
      */
-    public Builder setStatus(io.github.mohitkumar.orchy.api.v1.TaskResult.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
+    public java.lang.String getActionName() {
+      java.lang.Object ref = actionName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        actionName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
       }
-      
-      status_ = value.getNumber();
+    }
+    /**
+     * <code>string actionName = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getActionNameBytes() {
+      java.lang.Object ref = actionName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        actionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string actionName = 5;</code>
+     */
+    public Builder setActionName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      actionName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>.TaskResult.Status status = 6;</code>
+     * <code>string actionName = 5;</code>
      */
-    public Builder clearStatus() {
+    public Builder clearActionName() {
       
-      status_ = 0;
+      actionName_ = getDefaultInstance().getActionName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string actionName = 5;</code>
+     */
+    public Builder setActionNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      actionName_ = value;
       onChanged();
       return this;
     }
 
     private int retryCount_ ;
     /**
-     * <code>int32 retryCount = 7;</code>
+     * <code>int32 retryCount = 6;</code>
      */
     public int getRetryCount() {
       return retryCount_;
     }
     /**
-     * <code>int32 retryCount = 7;</code>
+     * <code>int32 retryCount = 6;</code>
      */
     public Builder setRetryCount(int value) {
       
@@ -1274,7 +1093,7 @@ public  final class TaskResult extends
       return this;
     }
     /**
-     * <code>int32 retryCount = 7;</code>
+     * <code>int32 retryCount = 6;</code>
      */
     public Builder clearRetryCount() {
       
@@ -1293,39 +1112,39 @@ public  final class TaskResult extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:TaskResult)
+    // @@protoc_insertion_point(builder_scope:Action)
   }
 
-  // @@protoc_insertion_point(class_scope:TaskResult)
-  private static final io.github.mohitkumar.orchy.api.v1.TaskResult DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:Action)
+  private static final io.github.mohitkumar.orchy.api.v1.Action DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.TaskResult();
+    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.Action();
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskResult getDefaultInstance() {
+  public static io.github.mohitkumar.orchy.api.v1.Action getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaskResult>
-      PARSER = new com.google.protobuf.AbstractParser<TaskResult>() {
-    public TaskResult parsePartialFrom(
+  private static final com.google.protobuf.Parser<Action>
+      PARSER = new com.google.protobuf.AbstractParser<Action>() {
+    public Action parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaskResult(input, extensionRegistry);
+        return new Action(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaskResult> parser() {
+  public static com.google.protobuf.Parser<Action> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaskResult> getParserForType() {
+  public com.google.protobuf.Parser<Action> getParserForType() {
     return PARSER;
   }
 
-  public io.github.mohitkumar.orchy.api.v1.TaskResult getDefaultInstanceForType() {
+  public io.github.mohitkumar.orchy.api.v1.Action getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

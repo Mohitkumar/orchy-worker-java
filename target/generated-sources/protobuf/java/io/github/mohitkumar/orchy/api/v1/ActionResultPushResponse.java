@@ -4,17 +4,17 @@
 package io.github.mohitkumar.orchy.api.v1;
 
 /**
- * Protobuf type {@code TaskResultPushResponse}
+ * Protobuf type {@code ActionResultPushResponse}
  */
-public  final class TaskResultPushResponse extends
+public  final class ActionResultPushResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:TaskResultPushResponse)
-    TaskResultPushResponseOrBuilder {
-  // Use TaskResultPushResponse.newBuilder() to construct.
-  private TaskResultPushResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:ActionResultPushResponse)
+    ActionResultPushResponseOrBuilder {
+  // Use ActionResultPushResponse.newBuilder() to construct.
+  private ActionResultPushResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaskResultPushResponse() {
+  private ActionResultPushResponse() {
     status_ = false;
   }
 
@@ -23,7 +23,7 @@ public  final class TaskResultPushResponse extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private TaskResultPushResponse(
+  private ActionResultPushResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -61,14 +61,14 @@ public  final class TaskResultPushResponse extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResultPushResponse_descriptor;
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionResultPushResponse_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResultPushResponse_fieldAccessorTable
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionResultPushResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.class, io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.Builder.class);
+            io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.class, io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.Builder.class);
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
@@ -116,10 +116,10 @@ public  final class TaskResultPushResponse extends
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse)) {
+    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse)) {
       return super.equals(obj);
     }
-    io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse other = (io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse) obj;
+    io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse other = (io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse) obj;
 
     boolean result = true;
     result = result && (getStatus()
@@ -142,69 +142,69 @@ public  final class TaskResultPushResponse extends
     return hash;
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(byte[] data)
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseDelimitedFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseDelimitedFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -216,7 +216,7 @@ public  final class TaskResultPushResponse extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse prototype) {
+  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -231,25 +231,25 @@ public  final class TaskResultPushResponse extends
     return builder;
   }
   /**
-   * Protobuf type {@code TaskResultPushResponse}
+   * Protobuf type {@code ActionResultPushResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:TaskResultPushResponse)
-      io.github.mohitkumar.orchy.api.v1.TaskResultPushResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ActionResultPushResponse)
+      io.github.mohitkumar.orchy.api.v1.ActionResultPushResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResultPushResponse_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionResultPushResponse_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResultPushResponse_fieldAccessorTable
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionResultPushResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.class, io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.Builder.class);
+              io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.class, io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.Builder.class);
     }
 
-    // Construct using io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.newBuilder()
+    // Construct using io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -273,23 +273,23 @@ public  final class TaskResultPushResponse extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskResultPushResponse_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionResultPushResponse_descriptor;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse getDefaultInstanceForType() {
-      return io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.getDefaultInstance();
+    public io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse getDefaultInstanceForType() {
+      return io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.getDefaultInstance();
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse build() {
-      io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse result = buildPartial();
+    public io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse build() {
+      io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse buildPartial() {
-      io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse result = new io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse(this);
+    public io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse buildPartial() {
+      io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse result = new io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse(this);
       result.status_ = status_;
       onBuilt();
       return result;
@@ -322,16 +322,16 @@ public  final class TaskResultPushResponse extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse) {
-        return mergeFrom((io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse)other);
+      if (other instanceof io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse) {
+        return mergeFrom((io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse other) {
-      if (other == io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse other) {
+      if (other == io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse.getDefaultInstance()) return this;
       if (other.getStatus() != false) {
         setStatus(other.getStatus());
       }
@@ -347,11 +347,11 @@ public  final class TaskResultPushResponse extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse parsedMessage = null;
+      io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse) e.getUnfinishedMessage();
+        parsedMessage = (io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -397,39 +397,39 @@ public  final class TaskResultPushResponse extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:TaskResultPushResponse)
+    // @@protoc_insertion_point(builder_scope:ActionResultPushResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:TaskResultPushResponse)
-  private static final io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ActionResultPushResponse)
+  private static final io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse();
+    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse();
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse getDefaultInstance() {
+  public static io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaskResultPushResponse>
-      PARSER = new com.google.protobuf.AbstractParser<TaskResultPushResponse>() {
-    public TaskResultPushResponse parsePartialFrom(
+  private static final com.google.protobuf.Parser<ActionResultPushResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ActionResultPushResponse>() {
+    public ActionResultPushResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaskResultPushResponse(input, extensionRegistry);
+        return new ActionResultPushResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaskResultPushResponse> parser() {
+  public static com.google.protobuf.Parser<ActionResultPushResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaskResultPushResponse> getParserForType() {
+  public com.google.protobuf.Parser<ActionResultPushResponse> getParserForType() {
     return PARSER;
   }
 
-  public io.github.mohitkumar.orchy.api.v1.TaskResultPushResponse getDefaultInstanceForType() {
+  public io.github.mohitkumar.orchy.api.v1.ActionResultPushResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

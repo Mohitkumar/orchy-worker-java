@@ -3,8 +3,8 @@
 
 package io.github.mohitkumar.orchy.api.v1;
 
-public interface TaskResultPushResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:TaskResultPushResponse)
+public interface ActionDefinitionSaveResponseOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ActionDefinitionSaveResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

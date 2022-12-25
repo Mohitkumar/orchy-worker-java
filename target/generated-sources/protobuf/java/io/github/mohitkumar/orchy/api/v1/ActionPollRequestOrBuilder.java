@@ -3,19 +3,19 @@
 
 package io.github.mohitkumar.orchy.api.v1;
 
-public interface TaskPollRequestOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:TaskPollRequest)
+public interface ActionPollRequestOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ActionPollRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string taskType = 1;</code>
+   * <code>string actionType = 1;</code>
    */
-  java.lang.String getTaskType();
+  java.lang.String getActionType();
   /**
-   * <code>string taskType = 1;</code>
+   * <code>string actionType = 1;</code>
    */
   com.google.protobuf.ByteString
-      getTaskTypeBytes();
+      getActionTypeBytes();
 
   /**
    * <code>int32 batchSize = 2;</code>

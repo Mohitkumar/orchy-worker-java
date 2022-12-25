@@ -4,17 +4,17 @@
 package io.github.mohitkumar.orchy.api.v1;
 
 /**
- * Protobuf type {@code TaskDef}
+ * Protobuf type {@code ActionDefinition}
  */
-public  final class TaskDef extends
+public  final class ActionDefinition extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:TaskDef)
-    TaskDefOrBuilder {
-  // Use TaskDef.newBuilder() to construct.
-  private TaskDef(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:ActionDefinition)
+    ActionDefinitionOrBuilder {
+  // Use ActionDefinition.newBuilder() to construct.
+  private ActionDefinition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaskDef() {
+  private ActionDefinition() {
     name_ = "";
     retryCount_ = 0;
     retryAfterSeconds_ = 0;
@@ -27,7 +27,7 @@ public  final class TaskDef extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private TaskDef(
+  private ActionDefinition(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -87,14 +87,14 @@ public  final class TaskDef extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskDef_descriptor;
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionDefinition_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskDef_fieldAccessorTable
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionDefinition_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.github.mohitkumar.orchy.api.v1.TaskDef.class, io.github.mohitkumar.orchy.api.v1.TaskDef.Builder.class);
+            io.github.mohitkumar.orchy.api.v1.ActionDefinition.class, io.github.mohitkumar.orchy.api.v1.ActionDefinition.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -254,10 +254,10 @@ public  final class TaskDef extends
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.TaskDef)) {
+    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.ActionDefinition)) {
       return super.equals(obj);
     }
-    io.github.mohitkumar.orchy.api.v1.TaskDef other = (io.github.mohitkumar.orchy.api.v1.TaskDef) obj;
+    io.github.mohitkumar.orchy.api.v1.ActionDefinition other = (io.github.mohitkumar.orchy.api.v1.ActionDefinition) obj;
 
     boolean result = true;
     result = result && getName()
@@ -295,69 +295,69 @@ public  final class TaskDef extends
     return hash;
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(byte[] data)
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseDelimitedFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseDelimitedFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -369,7 +369,7 @@ public  final class TaskDef extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.TaskDef prototype) {
+  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.ActionDefinition prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -384,25 +384,25 @@ public  final class TaskDef extends
     return builder;
   }
   /**
-   * Protobuf type {@code TaskDef}
+   * Protobuf type {@code ActionDefinition}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:TaskDef)
-      io.github.mohitkumar.orchy.api.v1.TaskDefOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ActionDefinition)
+      io.github.mohitkumar.orchy.api.v1.ActionDefinitionOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskDef_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionDefinition_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskDef_fieldAccessorTable
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionDefinition_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.github.mohitkumar.orchy.api.v1.TaskDef.class, io.github.mohitkumar.orchy.api.v1.TaskDef.Builder.class);
+              io.github.mohitkumar.orchy.api.v1.ActionDefinition.class, io.github.mohitkumar.orchy.api.v1.ActionDefinition.Builder.class);
     }
 
-    // Construct using io.github.mohitkumar.orchy.api.v1.TaskDef.newBuilder()
+    // Construct using io.github.mohitkumar.orchy.api.v1.ActionDefinition.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -434,23 +434,23 @@ public  final class TaskDef extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskDef_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionDefinition_descriptor;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskDef getDefaultInstanceForType() {
-      return io.github.mohitkumar.orchy.api.v1.TaskDef.getDefaultInstance();
+    public io.github.mohitkumar.orchy.api.v1.ActionDefinition getDefaultInstanceForType() {
+      return io.github.mohitkumar.orchy.api.v1.ActionDefinition.getDefaultInstance();
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskDef build() {
-      io.github.mohitkumar.orchy.api.v1.TaskDef result = buildPartial();
+    public io.github.mohitkumar.orchy.api.v1.ActionDefinition build() {
+      io.github.mohitkumar.orchy.api.v1.ActionDefinition result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskDef buildPartial() {
-      io.github.mohitkumar.orchy.api.v1.TaskDef result = new io.github.mohitkumar.orchy.api.v1.TaskDef(this);
+    public io.github.mohitkumar.orchy.api.v1.ActionDefinition buildPartial() {
+      io.github.mohitkumar.orchy.api.v1.ActionDefinition result = new io.github.mohitkumar.orchy.api.v1.ActionDefinition(this);
       result.name_ = name_;
       result.retryCount_ = retryCount_;
       result.retryAfterSeconds_ = retryAfterSeconds_;
@@ -487,16 +487,16 @@ public  final class TaskDef extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.github.mohitkumar.orchy.api.v1.TaskDef) {
-        return mergeFrom((io.github.mohitkumar.orchy.api.v1.TaskDef)other);
+      if (other instanceof io.github.mohitkumar.orchy.api.v1.ActionDefinition) {
+        return mergeFrom((io.github.mohitkumar.orchy.api.v1.ActionDefinition)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.TaskDef other) {
-      if (other == io.github.mohitkumar.orchy.api.v1.TaskDef.getDefaultInstance()) return this;
+    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.ActionDefinition other) {
+      if (other == io.github.mohitkumar.orchy.api.v1.ActionDefinition.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -526,11 +526,11 @@ public  final class TaskDef extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.github.mohitkumar.orchy.api.v1.TaskDef parsedMessage = null;
+      io.github.mohitkumar.orchy.api.v1.ActionDefinition parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.github.mohitkumar.orchy.api.v1.TaskDef) e.getUnfinishedMessage();
+        parsedMessage = (io.github.mohitkumar.orchy.api.v1.ActionDefinition) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -766,39 +766,39 @@ public  final class TaskDef extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:TaskDef)
+    // @@protoc_insertion_point(builder_scope:ActionDefinition)
   }
 
-  // @@protoc_insertion_point(class_scope:TaskDef)
-  private static final io.github.mohitkumar.orchy.api.v1.TaskDef DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ActionDefinition)
+  private static final io.github.mohitkumar.orchy.api.v1.ActionDefinition DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.TaskDef();
+    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.ActionDefinition();
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskDef getDefaultInstance() {
+  public static io.github.mohitkumar.orchy.api.v1.ActionDefinition getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaskDef>
-      PARSER = new com.google.protobuf.AbstractParser<TaskDef>() {
-    public TaskDef parsePartialFrom(
+  private static final com.google.protobuf.Parser<ActionDefinition>
+      PARSER = new com.google.protobuf.AbstractParser<ActionDefinition>() {
+    public ActionDefinition parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaskDef(input, extensionRegistry);
+        return new ActionDefinition(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaskDef> parser() {
+  public static com.google.protobuf.Parser<ActionDefinition> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaskDef> getParserForType() {
+  public com.google.protobuf.Parser<ActionDefinition> getParserForType() {
     return PARSER;
   }
 
-  public io.github.mohitkumar.orchy.api.v1.TaskDef getDefaultInstanceForType() {
+  public io.github.mohitkumar.orchy.api.v1.ActionDefinition getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

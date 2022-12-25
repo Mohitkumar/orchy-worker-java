@@ -1,6 +1,6 @@
 package io.github.mohitkumar.orchy.client;
 
-import io.github.mohitkumar.orchy.api.v1.TaskServiceGrpc;
+import io.github.mohitkumar.orchy.api.v1.ActionServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.NameResolver;
@@ -8,9 +8,9 @@ import io.grpc.util.RoundRobinLoadBalancerFactory;
 
 public class Client {
 
-    private TaskServiceGrpc.TaskServiceBlockingStub stub;
+    private ActionServiceGrpc.ActionServiceBlockingStub stub;
 
-    private TaskServiceGrpc.TaskServiceFutureStub asyncStub;
+    private ActionServiceGrpc.ActionServiceFutureStub asyncStub;
 
     public Client(String host, int port) {
         NameResolver.Factory factory = new CustomNameResolverFactory(host,port);
@@ -19,15 +19,15 @@ public class Client {
                 .nameResolverFactory(factory)
                 .loadBalancerFactory(RoundRobinLoadBalancerFactory.getInstance())
                 .usePlaintext().build();
-        stub = TaskServiceGrpc.newBlockingStub(managedChannel);
-        asyncStub = TaskServiceGrpc.newFutureStub(managedChannel);
+        stub = ActionServiceGrpc.newBlockingStub(managedChannel);
+        asyncStub = ActionServiceGrpc.newFutureStub(managedChannel);
     }
 
-    public TaskServiceGrpc.TaskServiceBlockingStub getClient(){
+    public ActionServiceGrpc.ActionServiceBlockingStub getClient(){
         return stub;
     }
 
-    public TaskServiceGrpc.TaskServiceFutureStub getAsyncClient(){
+    public ActionServiceGrpc.ActionServiceFutureStub getAsyncClient(){
         return asyncStub;
     }
 }

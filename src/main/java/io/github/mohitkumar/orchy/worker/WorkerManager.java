@@ -1,6 +1,6 @@
 package io.github.mohitkumar.orchy.worker;
 
-import io.github.mohitkumar.orchy.api.v1.TaskDef;
+import io.github.mohitkumar.orchy.api.v1.ActionDefinition;
 import io.github.mohitkumar.orchy.client.Client;
 
 import java.util.ArrayList;
@@ -27,14 +27,14 @@ public class WorkerManager {
     }
 
     public void registerWorker(Worker worker, int threadCount){
-        TaskDef taskDef = TaskDef.newBuilder()
+        ActionDefinition actionDefinition = ActionDefinition.newBuilder()
                 .setName(worker.getName())
                 .setRetryCount(worker.getRetryCount())
                 .setRetryAfterSeconds(worker.getRetryAfterSeconds())
                 .setRetryPolicy(worker.getRetryPolicy().name())
                 .setTimeoutSeconds(worker.getTimeoutSeconds())
                 .build();
-        client.getClient().saveTaskDef(taskDef);
+        client.getClient().saveActionDefinition(actionDefinition);
         workers.put(worker, threadCount);
     }
 

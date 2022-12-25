@@ -4,18 +4,18 @@
 package io.github.mohitkumar.orchy.api.v1;
 
 /**
- * Protobuf type {@code TaskPollRequest}
+ * Protobuf type {@code ActionPollRequest}
  */
-public  final class TaskPollRequest extends
+public  final class ActionPollRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:TaskPollRequest)
-    TaskPollRequestOrBuilder {
-  // Use TaskPollRequest.newBuilder() to construct.
-  private TaskPollRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // @@protoc_insertion_point(message_implements:ActionPollRequest)
+    ActionPollRequestOrBuilder {
+  // Use ActionPollRequest.newBuilder() to construct.
+  private ActionPollRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private TaskPollRequest() {
-    taskType_ = "";
+  private ActionPollRequest() {
+    actionType_ = "";
     batchSize_ = 0;
   }
 
@@ -24,7 +24,7 @@ public  final class TaskPollRequest extends
   getUnknownFields() {
     return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
-  private TaskPollRequest(
+  private ActionPollRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -47,7 +47,7 @@ public  final class TaskPollRequest extends
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            taskType_ = s;
+            actionType_ = s;
             break;
           }
           case 16: {
@@ -68,44 +68,44 @@ public  final class TaskPollRequest extends
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskPollRequest_descriptor;
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionPollRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskPollRequest_fieldAccessorTable
+    return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionPollRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.github.mohitkumar.orchy.api.v1.TaskPollRequest.class, io.github.mohitkumar.orchy.api.v1.TaskPollRequest.Builder.class);
+            io.github.mohitkumar.orchy.api.v1.ActionPollRequest.class, io.github.mohitkumar.orchy.api.v1.ActionPollRequest.Builder.class);
   }
 
-  public static final int TASKTYPE_FIELD_NUMBER = 1;
-  private volatile java.lang.Object taskType_;
+  public static final int ACTIONTYPE_FIELD_NUMBER = 1;
+  private volatile java.lang.Object actionType_;
   /**
-   * <code>string taskType = 1;</code>
+   * <code>string actionType = 1;</code>
    */
-  public java.lang.String getTaskType() {
-    java.lang.Object ref = taskType_;
+  public java.lang.String getActionType() {
+    java.lang.Object ref = actionType_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      taskType_ = s;
+      actionType_ = s;
       return s;
     }
   }
   /**
-   * <code>string taskType = 1;</code>
+   * <code>string actionType = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getTaskTypeBytes() {
-    java.lang.Object ref = taskType_;
+      getActionTypeBytes() {
+    java.lang.Object ref = actionType_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      taskType_ = b;
+      actionType_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -133,8 +133,8 @@ public  final class TaskPollRequest extends
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getTaskTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, taskType_);
+    if (!getActionTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, actionType_);
     }
     if (batchSize_ != 0) {
       output.writeInt32(2, batchSize_);
@@ -146,8 +146,8 @@ public  final class TaskPollRequest extends
     if (size != -1) return size;
 
     size = 0;
-    if (!getTaskTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, taskType_);
+    if (!getActionTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, actionType_);
     }
     if (batchSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -163,14 +163,14 @@ public  final class TaskPollRequest extends
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.TaskPollRequest)) {
+    if (!(obj instanceof io.github.mohitkumar.orchy.api.v1.ActionPollRequest)) {
       return super.equals(obj);
     }
-    io.github.mohitkumar.orchy.api.v1.TaskPollRequest other = (io.github.mohitkumar.orchy.api.v1.TaskPollRequest) obj;
+    io.github.mohitkumar.orchy.api.v1.ActionPollRequest other = (io.github.mohitkumar.orchy.api.v1.ActionPollRequest) obj;
 
     boolean result = true;
-    result = result && getTaskType()
-        .equals(other.getTaskType());
+    result = result && getActionType()
+        .equals(other.getActionType());
     result = result && (getBatchSize()
         == other.getBatchSize());
     return result;
@@ -183,8 +183,8 @@ public  final class TaskPollRequest extends
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TASKTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getTaskType().hashCode();
+    hash = (37 * hash) + ACTIONTYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getActionType().hashCode();
     hash = (37 * hash) + BATCHSIZE_FIELD_NUMBER;
     hash = (53 * hash) + getBatchSize();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -192,69 +192,69 @@ public  final class TaskPollRequest extends
     return hash;
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(byte[] data)
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseDelimitedFrom(java.io.InputStream input)
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseDelimitedFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest parseFrom(
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -266,7 +266,7 @@ public  final class TaskPollRequest extends
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.TaskPollRequest prototype) {
+  public static Builder newBuilder(io.github.mohitkumar.orchy.api.v1.ActionPollRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -281,25 +281,25 @@ public  final class TaskPollRequest extends
     return builder;
   }
   /**
-   * Protobuf type {@code TaskPollRequest}
+   * Protobuf type {@code ActionPollRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:TaskPollRequest)
-      io.github.mohitkumar.orchy.api.v1.TaskPollRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ActionPollRequest)
+      io.github.mohitkumar.orchy.api.v1.ActionPollRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskPollRequest_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionPollRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskPollRequest_fieldAccessorTable
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionPollRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.github.mohitkumar.orchy.api.v1.TaskPollRequest.class, io.github.mohitkumar.orchy.api.v1.TaskPollRequest.Builder.class);
+              io.github.mohitkumar.orchy.api.v1.ActionPollRequest.class, io.github.mohitkumar.orchy.api.v1.ActionPollRequest.Builder.class);
     }
 
-    // Construct using io.github.mohitkumar.orchy.api.v1.TaskPollRequest.newBuilder()
+    // Construct using io.github.mohitkumar.orchy.api.v1.ActionPollRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -316,7 +316,7 @@ public  final class TaskPollRequest extends
     }
     public Builder clear() {
       super.clear();
-      taskType_ = "";
+      actionType_ = "";
 
       batchSize_ = 0;
 
@@ -325,24 +325,24 @@ public  final class TaskPollRequest extends
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_TaskPollRequest_descriptor;
+      return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_ActionPollRequest_descriptor;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskPollRequest getDefaultInstanceForType() {
-      return io.github.mohitkumar.orchy.api.v1.TaskPollRequest.getDefaultInstance();
+    public io.github.mohitkumar.orchy.api.v1.ActionPollRequest getDefaultInstanceForType() {
+      return io.github.mohitkumar.orchy.api.v1.ActionPollRequest.getDefaultInstance();
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskPollRequest build() {
-      io.github.mohitkumar.orchy.api.v1.TaskPollRequest result = buildPartial();
+    public io.github.mohitkumar.orchy.api.v1.ActionPollRequest build() {
+      io.github.mohitkumar.orchy.api.v1.ActionPollRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public io.github.mohitkumar.orchy.api.v1.TaskPollRequest buildPartial() {
-      io.github.mohitkumar.orchy.api.v1.TaskPollRequest result = new io.github.mohitkumar.orchy.api.v1.TaskPollRequest(this);
-      result.taskType_ = taskType_;
+    public io.github.mohitkumar.orchy.api.v1.ActionPollRequest buildPartial() {
+      io.github.mohitkumar.orchy.api.v1.ActionPollRequest result = new io.github.mohitkumar.orchy.api.v1.ActionPollRequest(this);
+      result.actionType_ = actionType_;
       result.batchSize_ = batchSize_;
       onBuilt();
       return result;
@@ -375,18 +375,18 @@ public  final class TaskPollRequest extends
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof io.github.mohitkumar.orchy.api.v1.TaskPollRequest) {
-        return mergeFrom((io.github.mohitkumar.orchy.api.v1.TaskPollRequest)other);
+      if (other instanceof io.github.mohitkumar.orchy.api.v1.ActionPollRequest) {
+        return mergeFrom((io.github.mohitkumar.orchy.api.v1.ActionPollRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.TaskPollRequest other) {
-      if (other == io.github.mohitkumar.orchy.api.v1.TaskPollRequest.getDefaultInstance()) return this;
-      if (!other.getTaskType().isEmpty()) {
-        taskType_ = other.taskType_;
+    public Builder mergeFrom(io.github.mohitkumar.orchy.api.v1.ActionPollRequest other) {
+      if (other == io.github.mohitkumar.orchy.api.v1.ActionPollRequest.getDefaultInstance()) return this;
+      if (!other.getActionType().isEmpty()) {
+        actionType_ = other.actionType_;
         onChanged();
       }
       if (other.getBatchSize() != 0) {
@@ -404,11 +404,11 @@ public  final class TaskPollRequest extends
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      io.github.mohitkumar.orchy.api.v1.TaskPollRequest parsedMessage = null;
+      io.github.mohitkumar.orchy.api.v1.ActionPollRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (io.github.mohitkumar.orchy.api.v1.TaskPollRequest) e.getUnfinishedMessage();
+        parsedMessage = (io.github.mohitkumar.orchy.api.v1.ActionPollRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -418,71 +418,71 @@ public  final class TaskPollRequest extends
       return this;
     }
 
-    private java.lang.Object taskType_ = "";
+    private java.lang.Object actionType_ = "";
     /**
-     * <code>string taskType = 1;</code>
+     * <code>string actionType = 1;</code>
      */
-    public java.lang.String getTaskType() {
-      java.lang.Object ref = taskType_;
+    public java.lang.String getActionType() {
+      java.lang.Object ref = actionType_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        taskType_ = s;
+        actionType_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string taskType = 1;</code>
+     * <code>string actionType = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getTaskTypeBytes() {
-      java.lang.Object ref = taskType_;
+        getActionTypeBytes() {
+      java.lang.Object ref = actionType_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        taskType_ = b;
+        actionType_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string taskType = 1;</code>
+     * <code>string actionType = 1;</code>
      */
-    public Builder setTaskType(
+    public Builder setActionType(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      taskType_ = value;
+      actionType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string taskType = 1;</code>
+     * <code>string actionType = 1;</code>
      */
-    public Builder clearTaskType() {
+    public Builder clearActionType() {
       
-      taskType_ = getDefaultInstance().getTaskType();
+      actionType_ = getDefaultInstance().getActionType();
       onChanged();
       return this;
     }
     /**
-     * <code>string taskType = 1;</code>
+     * <code>string actionType = 1;</code>
      */
-    public Builder setTaskTypeBytes(
+    public Builder setActionTypeBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      taskType_ = value;
+      actionType_ = value;
       onChanged();
       return this;
     }
@@ -523,39 +523,39 @@ public  final class TaskPollRequest extends
     }
 
 
-    // @@protoc_insertion_point(builder_scope:TaskPollRequest)
+    // @@protoc_insertion_point(builder_scope:ActionPollRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:TaskPollRequest)
-  private static final io.github.mohitkumar.orchy.api.v1.TaskPollRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ActionPollRequest)
+  private static final io.github.mohitkumar.orchy.api.v1.ActionPollRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.TaskPollRequest();
+    DEFAULT_INSTANCE = new io.github.mohitkumar.orchy.api.v1.ActionPollRequest();
   }
 
-  public static io.github.mohitkumar.orchy.api.v1.TaskPollRequest getDefaultInstance() {
+  public static io.github.mohitkumar.orchy.api.v1.ActionPollRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<TaskPollRequest>
-      PARSER = new com.google.protobuf.AbstractParser<TaskPollRequest>() {
-    public TaskPollRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<ActionPollRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ActionPollRequest>() {
+    public ActionPollRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaskPollRequest(input, extensionRegistry);
+        return new ActionPollRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<TaskPollRequest> parser() {
+  public static com.google.protobuf.Parser<ActionPollRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<TaskPollRequest> getParserForType() {
+  public com.google.protobuf.Parser<ActionPollRequest> getParserForType() {
     return PARSER;
   }
 
-  public io.github.mohitkumar.orchy.api.v1.TaskPollRequest getDefaultInstanceForType() {
+  public io.github.mohitkumar.orchy.api.v1.ActionPollRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

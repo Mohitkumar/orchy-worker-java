@@ -23,18 +23,18 @@ public class Main {
         };
         Worker worker1 = Worker
                 .newBuilder()
-                .DefaultWorker(addDataFn,"add-data-worker", 2,10, TimeUnit.MICROSECONDS).build();
+                .DefaultWorker(addDataFn,"add-data-worker", 2,1, TimeUnit.MILLISECONDS).build();
         Worker worker2 = Worker
                 .newBuilder()
-                .DefaultWorker(printFn,"print-worker", 2,10,TimeUnit.MICROSECONDS).build();
+                .DefaultWorker(printFn,"print-worker", 2,1,TimeUnit.MILLISECONDS).build();
 
         Worker worker3 = Worker
                 .newBuilder()
-                .DefaultWorker(enhanceDataFn,"enhanceData", 2,10,TimeUnit.MICROSECONDS).build();
+                .DefaultWorker(enhanceDataFn,"enhanceData", 2,1,TimeUnit.MILLISECONDS).build();
         WorkerManager manager = new WorkerManager("localhost",8099);
-        manager.registerWorker(worker1,1);
-        manager.registerWorker(worker2,1);
-        manager.registerWorker(worker3,1);
+        manager.registerWorker(worker1,10);
+        manager.registerWorker(worker2,10);
+        manager.registerWorker(worker3,10);
         manager.start();
     }
 }

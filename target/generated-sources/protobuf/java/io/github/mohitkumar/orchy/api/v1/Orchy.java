@@ -84,37 +84,39 @@ public final class Orchy {
   static {
     java.lang.String[] descriptorData = {
       "\n\nflow.proto\032\034google/protobuf/struct.pro" +
-      "to\"\316\001\n\006Action\022\024\n\014workflowName\030\001 \001(\t\022\016\n\006f" +
+      "to\"\210\002\n\006Action\022\024\n\014workflowName\030\001 \001(\t\022\016\n\006f" +
       "lowId\030\002 \001(\t\022\037\n\004data\030\003 \003(\0132\021.Action.DataE" +
       "ntry\022\020\n\010actionId\030\004 \001(\005\022\022\n\nactionName\030\005 \001" +
-      "(\t\022\022\n\nretryCount\030\006 \001(\005\032C\n\tDataEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobu" +
-      "f.Value:\0028\001\"#\n\007Actions\022\030\n\007actions\030\001 \003(\0132" +
-      "\007.Action\"\241\002\n\014ActionResult\022\024\n\014workflowNam" +
-      "e\030\001 \001(\t\022\022\n\nactionName\030\002 \001(\t\022\016\n\006flowId\030\003 " +
-      "\001(\t\022\020\n\010actionId\030\004 \001(\005\022%\n\004data\030\005 \003(\0132\027.Ac",
-      "tionResult.DataEntry\022$\n\006status\030\006 \001(\0162\024.A" +
-      "ctionResult.Status\022\022\n\nretryCount\030\007 \001(\005\032C" +
-      "\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132" +
-      "\026.google.protobuf.Value:\0028\001\"\037\n\006Status\022\013\n" +
-      "\007SUCCESS\020\000\022\010\n\004FAIL\020\001\"|\n\020ActionDefinition" +
-      "\022\014\n\004name\030\001 \001(\t\022\022\n\nretryCount\030\002 \001(\005\022\031\n\021re" +
-      "tryAfterSeconds\030\003 \001(\005\022\023\n\013retryPolicy\030\004 \001" +
-      "(\t\022\026\n\016timeoutSeconds\030\005 \001(\005\".\n\034ActionDefi" +
-      "nitionSaveResponse\022\016\n\006status\030\001 \001(\010\":\n\021Ac" +
-      "tionPollRequest\022\022\n\nactionType\030\001 \001(\t\022\021\n\tb",
-      "atchSize\030\002 \001(\005\"*\n\030ActionResultPushRespon" +
-      "se\022\016\n\006status\030\001 \001(\010\"&\n\006Server\022\n\n\002id\030\001 \001(\t" +
-      "\022\020\n\010rpc_addr\030\002 \001(\t\"\023\n\021GetServersRequest\"" +
-      ".\n\022GetServersResponse\022\030\n\007servers\030\001 \003(\0132\007" +
-      ".Server2\360\001\n\rActionService\022J\n\024SaveActionD" +
-      "efinition\022\021.ActionDefinition\032\035.ActionDef" +
-      "initionSaveResponse\"\000\022&\n\004Poll\022\022.ActionPo" +
-      "llRequest\032\010.Actions\"\000\0222\n\004Push\022\r.ActionRe" +
-      "sult\032\031.ActionResultPushResponse\"\000\0227\n\nGet" +
-      "Servers\022\022.GetServersRequest\032\023.GetServers",
-      "Response\"\000B2\n!io.github.mohitkumar.orchy" +
-      ".api.v1B\005OrchyP\001\242\002\003ORCb\006proto3"
+      "(\t\022\022\n\nretryCount\030\006 \001(\005\022\032\n\004type\030\007 \001(\0162\014.A" +
+      "ction.Type\032C\n\tDataEntry\022\013\n\003key\030\001 \001(\t\022%\n\005" +
+      "value\030\002 \001(\0132\026.google.protobuf.Value:\0028\001\"" +
+      "\034\n\004Type\022\n\n\006SYSTEM\020\000\022\010\n\004USER\020\001\"#\n\007Actions" +
+      "\022\030\n\007actions\030\001 \003(\0132\007.Action\"\241\002\n\014ActionRes" +
+      "ult\022\024\n\014workflowName\030\001 \001(\t\022\022\n\nactionName\030",
+      "\002 \001(\t\022\016\n\006flowId\030\003 \001(\t\022\020\n\010actionId\030\004 \001(\005\022" +
+      "%\n\004data\030\005 \003(\0132\027.ActionResult.DataEntry\022$" +
+      "\n\006status\030\006 \001(\0162\024.ActionResult.Status\022\022\n\n" +
+      "retryCount\030\007 \001(\005\032C\n\tDataEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf.Valu" +
+      "e:\0028\001\"\037\n\006Status\022\013\n\007SUCCESS\020\000\022\010\n\004FAIL\020\001\"|" +
+      "\n\020ActionDefinition\022\014\n\004name\030\001 \001(\t\022\022\n\nretr" +
+      "yCount\030\002 \001(\005\022\031\n\021retryAfterSeconds\030\003 \001(\005\022" +
+      "\023\n\013retryPolicy\030\004 \001(\t\022\026\n\016timeoutSeconds\030\005" +
+      " \001(\005\".\n\034ActionDefinitionSaveResponse\022\016\n\006",
+      "status\030\001 \001(\010\":\n\021ActionPollRequest\022\022\n\nact" +
+      "ionType\030\001 \001(\t\022\021\n\tbatchSize\030\002 \001(\005\"*\n\030Acti" +
+      "onResultPushResponse\022\016\n\006status\030\001 \001(\010\"&\n\006" +
+      "Server\022\n\n\002id\030\001 \001(\t\022\020\n\010rpc_addr\030\002 \001(\t\"\023\n\021" +
+      "GetServersRequest\".\n\022GetServersResponse\022" +
+      "\030\n\007servers\030\001 \003(\0132\007.Server2\360\001\n\rActionServ" +
+      "ice\022J\n\024SaveActionDefinition\022\021.ActionDefi" +
+      "nition\032\035.ActionDefinitionSaveResponse\"\000\022" +
+      "&\n\004Poll\022\022.ActionPollRequest\032\010.Actions\"\000\022" +
+      "2\n\004Push\022\r.ActionResult\032\031.ActionResultPus",
+      "hResponse\"\000\0227\n\nGetServers\022\022.GetServersRe" +
+      "quest\032\023.GetServersResponse\"\000B2\n!io.githu" +
+      "b.mohitkumar.orchy.api.v1B\005OrchyP\001\242\002\003ORC" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -134,7 +136,7 @@ public final class Orchy {
     internal_static_Action_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Action_descriptor,
-        new java.lang.String[] { "WorkflowName", "FlowId", "Data", "ActionId", "ActionName", "RetryCount", });
+        new java.lang.String[] { "WorkflowName", "FlowId", "Data", "ActionId", "ActionName", "RetryCount", "Type", });
     internal_static_Action_DataEntry_descriptor =
       internal_static_Action_descriptor.getNestedTypes().get(0);
     internal_static_Action_DataEntry_fieldAccessorTable = new

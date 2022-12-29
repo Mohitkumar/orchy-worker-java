@@ -1,13 +1,13 @@
 {
-  "name" :"wf2",
-  "rootAction":1,
+  "name":"wf4",
+  "rootAction" :1,
   "onSuccess" :"DELETE",
   "onFailure" :"DELETE",
   "actions":[
     {
-      "id":1,
-      "type":"user",
       "name":"add-data-worker",
+      "type":"user",
+      "id":1,
       "parameters":{
         "param1":23,
         "param2":"jk",
@@ -18,49 +18,45 @@
           "list":[23,{"nest":{"k":"$.input.nest.k1"}},"$.input.k2",{"list":["internal","$.input.nest.k1"]}]
         }
       },
-      "next":{"default":6}
+      "next":{"default":[2]}
     },
     {
-      "id":6,
-      "type":"system",
-      "name":"javascript",
-      "expression":"if($['1'].output.key1 == '200') {$['x']='nesX'};",
-      "next":{"default":7}
-    },
-    {
-      "id":7,
-      "type":"system",
-      "name":"delay",
-      "delaySeconds":10,
-      "next":{
-        "default": 2
-      }
-    },
-    {
-      "id":2,
-      "type":"system",
       "name":"switch",
-      "expression":"$.1.output.key1",
+      "type":"system",
+      "id":2,
+      "expression":"$1.output.newKey",
+      "parameters":{
+
+      },
       "next":{
-        "200": 3
+        "22":[3]
       }
     },
     {
       "id":3,
       "type":"system",
-      "name":"wait",
-      "event":"test",
-      "next":{
-        "default": 4
+      "name":"delay",
+      "delaySeconds":5,
+      "next":{"default":[4,5]}
+    },
+    {
+      "name":"print-worker",
+      "type":"user",
+      "id":4,
+      "parameters":{
+        "param1":"logger 1",
+        "param2" :"$.input.k2",
+        "param3" :"$.1.output.newKey",
+        "param4" :"$.1.output.nested.list"
       }
     },
     {
-      "id":4,
-      "type":"user",
       "name":"print-worker",
+      "type":"user",
+      "id":5,
       "parameters":{
-        "param1":"dsds",
-        "param2" :"$.input.k2",
+        "param1":"logger 2",
+        "param2" :"$.input.k1",
         "param3" :"$.1.output.newKey",
         "param4" :"$.1.output.nested.list"
       }

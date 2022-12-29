@@ -19,8 +19,8 @@ public class Client {
                 .nameResolverFactory(factory)
                 .loadBalancerFactory(RoundRobinLoadBalancerFactory.getInstance())
                 .usePlaintext().build();
-        stub = ActionServiceGrpc.newBlockingStub(managedChannel);
-        asyncStub = ActionServiceGrpc.newFutureStub(managedChannel);
+        stub = ActionServiceGrpc.newBlockingStub(managedChannel).withWaitForReady();
+        asyncStub = ActionServiceGrpc.newFutureStub(managedChannel).withWaitForReady();
     }
 
     public ActionServiceGrpc.ActionServiceBlockingStub getClient(){

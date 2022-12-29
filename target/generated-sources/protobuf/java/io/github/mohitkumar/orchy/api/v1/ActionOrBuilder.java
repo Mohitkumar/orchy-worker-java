@@ -80,4 +80,13 @@ public interface ActionOrBuilder extends
    * <code>int32 retryCount = 6;</code>
    */
   int getRetryCount();
+
+  /**
+   * <code>.Action.Type type = 7;</code>
+   */
+  int getTypeValue();
+  /**
+   * <code>.Action.Type type = 7;</code>
+   */
+  io.github.mohitkumar.orchy.api.v1.Action.Type getType();
 }

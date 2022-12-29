@@ -20,6 +20,7 @@ public  final class Action extends
     actionId_ = 0;
     actionName_ = "";
     retryCount_ = 0;
+    type_ = 0;
   }
 
   @java.lang.Override
@@ -88,6 +89,12 @@ public  final class Action extends
             retryCount_ = input.readInt32();
             break;
           }
+          case 56: {
+            int rawValue = input.readEnum();
+
+            type_ = rawValue;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -120,6 +127,104 @@ public  final class Action extends
     return io.github.mohitkumar.orchy.api.v1.Orchy.internal_static_Action_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.github.mohitkumar.orchy.api.v1.Action.class, io.github.mohitkumar.orchy.api.v1.Action.Builder.class);
+  }
+
+  /**
+   * Protobuf enum {@code Action.Type}
+   */
+  public enum Type
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>SYSTEM = 0;</code>
+     */
+    SYSTEM(0),
+    /**
+     * <code>USER = 1;</code>
+     */
+    USER(1),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>SYSTEM = 0;</code>
+     */
+    public static final int SYSTEM_VALUE = 0;
+    /**
+     * <code>USER = 1;</code>
+     */
+    public static final int USER_VALUE = 1;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Type valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Type forNumber(int value) {
+      switch (value) {
+        case 0: return SYSTEM;
+        case 1: return USER;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Type>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Type> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+            public Type findValueByNumber(int number) {
+              return Type.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return io.github.mohitkumar.orchy.api.v1.Action.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Type[] VALUES = values();
+
+    public static Type valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Type(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:Action.Type)
   }
 
   private int bitField0_;
@@ -319,6 +424,22 @@ public  final class Action extends
     return retryCount_;
   }
 
+  public static final int TYPE_FIELD_NUMBER = 7;
+  private int type_;
+  /**
+   * <code>.Action.Type type = 7;</code>
+   */
+  public int getTypeValue() {
+    return type_;
+  }
+  /**
+   * <code>.Action.Type type = 7;</code>
+   */
+  public io.github.mohitkumar.orchy.api.v1.Action.Type getType() {
+    io.github.mohitkumar.orchy.api.v1.Action.Type result = io.github.mohitkumar.orchy.api.v1.Action.Type.valueOf(type_);
+    return result == null ? io.github.mohitkumar.orchy.api.v1.Action.Type.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -351,6 +472,9 @@ public  final class Action extends
     }
     if (retryCount_ != 0) {
       output.writeInt32(6, retryCount_);
+    }
+    if (type_ != io.github.mohitkumar.orchy.api.v1.Action.Type.SYSTEM.getNumber()) {
+      output.writeEnum(7, type_);
     }
   }
 
@@ -386,6 +510,10 @@ public  final class Action extends
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(6, retryCount_);
     }
+    if (type_ != io.github.mohitkumar.orchy.api.v1.Action.Type.SYSTEM.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(7, type_);
+    }
     memoizedSize = size;
     return size;
   }
@@ -414,6 +542,7 @@ public  final class Action extends
         .equals(other.getActionName());
     result = result && (getRetryCount()
         == other.getRetryCount());
+    result = result && type_ == other.type_;
     return result;
   }
 
@@ -438,6 +567,8 @@ public  final class Action extends
     hash = (53 * hash) + getActionName().hashCode();
     hash = (37 * hash) + RETRYCOUNT_FIELD_NUMBER;
     hash = (53 * hash) + getRetryCount();
+    hash = (37 * hash) + TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + type_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -600,6 +731,8 @@ public  final class Action extends
 
       retryCount_ = 0;
 
+      type_ = 0;
+
       return this;
     }
 
@@ -631,6 +764,7 @@ public  final class Action extends
       result.actionId_ = actionId_;
       result.actionName_ = actionName_;
       result.retryCount_ = retryCount_;
+      result.type_ = type_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -692,6 +826,9 @@ public  final class Action extends
       }
       if (other.getRetryCount() != 0) {
         setRetryCount(other.getRetryCount());
+      }
+      if (other.type_ != 0) {
+        setTypeValue(other.getTypeValue());
       }
       onChanged();
       return this;
@@ -1098,6 +1235,50 @@ public  final class Action extends
     public Builder clearRetryCount() {
       
       retryCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int type_ = 0;
+    /**
+     * <code>.Action.Type type = 7;</code>
+     */
+    public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.Action.Type type = 7;</code>
+     */
+    public Builder setTypeValue(int value) {
+      type_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.Action.Type type = 7;</code>
+     */
+    public io.github.mohitkumar.orchy.api.v1.Action.Type getType() {
+      io.github.mohitkumar.orchy.api.v1.Action.Type result = io.github.mohitkumar.orchy.api.v1.Action.Type.valueOf(type_);
+      return result == null ? io.github.mohitkumar.orchy.api.v1.Action.Type.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.Action.Type type = 7;</code>
+     */
+    public Builder setType(io.github.mohitkumar.orchy.api.v1.Action.Type value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      type_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.Action.Type type = 7;</code>
+     */
+    public Builder clearType() {
+      
+      type_ = 0;
       onChanged();
       return this;
     }

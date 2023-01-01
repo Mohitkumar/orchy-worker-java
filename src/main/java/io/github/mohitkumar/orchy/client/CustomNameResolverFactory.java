@@ -1,6 +1,5 @@
 package io.github.mohitkumar.orchy.client;
 
-import com.google.common.util.concurrent.ListenableFuture;
 import io.github.mohitkumar.orchy.api.v1.ActionServiceGrpc;
 import io.github.mohitkumar.orchy.api.v1.GetServersRequest;
 import io.github.mohitkumar.orchy.api.v1.GetServersResponse;
@@ -46,7 +45,7 @@ public class CustomNameResolverFactory extends NameResolver.Factory {
 
     @Nullable
     @Override
-    public NameResolver newNameResolver(URI uri, Attributes attributes) {
+    public NameResolver newNameResolver(URI uri, NameResolver.Args args) {
 
         return new NameResolver() {
             private NameResolver.Listener listener;
@@ -74,6 +73,7 @@ public class CustomNameResolverFactory extends NameResolver.Factory {
             }
         };
     }
+
 
     @Override
     public String getDefaultScheme() {
@@ -110,7 +110,7 @@ public class CustomNameResolverFactory extends NameResolver.Factory {
 
         @Override
         public void onCompleted() {
-            LOGGER.info("completed");
+
         }
     }
 }

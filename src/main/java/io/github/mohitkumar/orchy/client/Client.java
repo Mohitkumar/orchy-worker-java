@@ -1,10 +1,7 @@
 package io.github.mohitkumar.orchy.client;
 
 import io.github.mohitkumar.orchy.api.v1.ActionServiceGrpc;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
-import io.grpc.NameResolver;
-import io.grpc.util.RoundRobinLoadBalancerFactory;
+import io.grpc.*;
 
 public class Client {
 
@@ -15,9 +12,8 @@ public class Client {
     public Client(String host, int port) {
         NameResolver.Factory factory = new CustomNameResolverFactory(host,port);
         ManagedChannel managedChannel = ManagedChannelBuilder
-                .forTarget("orchy")
+                .forTarget("orchy").defaultLoadBalancingPolicy("round_robin")
                 .nameResolverFactory(factory)
-                .loadBalancerFactory(RoundRobinLoadBalancerFactory.getInstance())
                 .usePlaintext().build();
         stub = ActionServiceGrpc.newBlockingStub(managedChannel).withWaitForReady();
         asyncStub = ActionServiceGrpc.newFutureStub(managedChannel).withWaitForReady();

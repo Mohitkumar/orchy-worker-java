@@ -18,7 +18,7 @@
 
   <groupId>io.github.mohitkumar</groupId>
   <artifactId>orchy</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
 
   <name>orchy-worker</name>
   <description>
@@ -45,6 +45,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <grpc.version>1.51.1</grpc.version>
     <protocCommand>protoc</protocCommand>
   </properties>
 
@@ -62,17 +63,17 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty</artifactId>
-      <version>1.16.1</version>
+      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
-      <version>1.16.1</version>
+      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
-      <version>1.16.1</version>
+      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

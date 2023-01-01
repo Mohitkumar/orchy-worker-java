@@ -94,7 +94,7 @@ public class Poller {
             try{
                 ActionResultPushResponse response = Poller.this.client.getClient().push(result);
                 boolean status = response.getStatus();
-                LOGGER.info("task result submit status {}",status);
+                LOGGER.debug("task result submit status {}",status);
                 if(!status){
                     //retry
                 }

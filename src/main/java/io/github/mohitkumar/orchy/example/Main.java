@@ -10,6 +10,7 @@ import java.util.function.Function;
 public class Main {
     public static void main(String[] args) {
         Function<Map<String, Object>, Map<String, Object>> addDataFn= (Map<String, Object> input) ->{
+            System.out.println(input);
             input.put("newKey",22);
             return input;
         };
@@ -23,7 +24,8 @@ public class Main {
         };
         Worker worker1 = Worker
                 .newBuilder()
-                .DefaultWorker(addDataFn,"add-data-worker", 2,1, TimeUnit.MILLISECONDS).build();
+                .DefaultWorker(addDataFn,"add-data-worker", 2,1, TimeUnit.MILLISECONDS).withTimeout(80).
+                build();
         Worker worker2 = Worker
                 .newBuilder()
                 .DefaultWorker(printFn,"print-worker", 2,1,TimeUnit.MILLISECONDS).build();

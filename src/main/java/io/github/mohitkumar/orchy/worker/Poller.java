@@ -1,5 +1,6 @@
 package io.github.mohitkumar.orchy.worker;
 
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.protobuf.Value;
 import io.github.mohitkumar.orchy.api.v1.*;
 import io.github.mohitkumar.orchy.client.Client;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ThreadFactory;
 
 public class Poller {
 
@@ -28,7 +30,9 @@ public class Poller {
         this.worker = worker;
         this.client = client;
         this.workerName = this.worker.getName();
-        scheduledExecutorService = Executors.newScheduledThreadPool(threads);
+        ThreadFactory tf =
+                new ThreadFactoryBuilder().setNameFormat(workerName+"-%d").build();
+        scheduledExecutorService = Executors.newScheduledThreadPool(threads,tf);
     }
 
     public void start(){
@@ -37,7 +41,7 @@ public class Poller {
     }
 
     public void stop(){
-
+        scheduledExecutorService.shutdown();
     }
 
     private class PollerWorker implements Runnable{

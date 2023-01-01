@@ -42,7 +42,9 @@ public class WorkerManager {
         for (Map.Entry<Worker, Integer> entry : workers.entrySet()) {
             Poller poller = new Poller(entry.getKey(), new Client(serverHost, serverPort), entry.getValue());
             pollers.add(poller);
-            poller.start();
+            for(int i = 0; i< entry.getValue(); i++){
+                poller.start();
+            }
         }
     }
 

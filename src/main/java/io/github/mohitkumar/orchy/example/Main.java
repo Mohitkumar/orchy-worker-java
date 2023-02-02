@@ -5,12 +5,15 @@ import io.github.mohitkumar.orchy.worker.WorkerManager;
 
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Function;
 
 public class Main {
+    private static AtomicLong counter = new AtomicLong(0);
     public static void main(String[] args) {
         Function<Map<String, Object>, Map<String, Object>> addDataFn= (Map<String, Object> input) ->{
             System.out.println(input);
+            System.out.println(counter.incrementAndGet());
             input.put("newKey",22);
             return input;
         };

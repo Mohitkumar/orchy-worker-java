@@ -38,9 +38,7 @@ public class ClientManager {
             Set<ServerAddress> newServers = getServers();
             if(!newServers.equals(servers)){
                 for (Client client : clients) {
-                    System.out.println("refreshing client" + client);
                     client.refresh(newServers);
-                    System.out.println("after refresh");
                 }
                 servers = newServers;
             }

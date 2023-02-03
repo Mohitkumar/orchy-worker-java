@@ -40,4 +40,12 @@ public class ServerAddress {
     public int hashCode() {
         return Objects.hash(host, port);
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "host='" + host + '\'' +
+                ", port=" + port +
+                '}';
+    }
 }

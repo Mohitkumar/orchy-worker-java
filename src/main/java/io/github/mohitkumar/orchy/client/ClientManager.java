@@ -37,6 +37,7 @@ public class ClientManager {
         executor.scheduleAtFixedRate(() ->{
             Set<ServerAddress> newServers = getServers();
             if(!newServers.equals(servers)){
+                LOGGER.info("connecting to cluster nodes={}", newServers);
                 for (Client client : clients) {
                     client.refresh(newServers);
                 }
@@ -60,7 +61,9 @@ public class ClientManager {
         }
     }
     public Client newClient(){
-        Client client = new Client(getServers());
+        Set<ServerAddress> srvs = getServers();
+        LOGGER.info("connecting to cluster nodes={}", srvs);
+        Client client = new Client(srvs);
         clients.add(client);
         return client;
     }
@@ -72,7 +75,6 @@ public class ClientManager {
                 .newBlockingStub(managedChannel)
                 .getServers(request);
         List<io.github.mohitkumar.orchy.api.v1.Server> serversList = servers.getServersList();
-        LOGGER.info("connecting to cluster nodes={}", servers);
         for (io.github.mohitkumar.orchy.api.v1.Server server : serversList) {
             String rpcAddr = server.getRpcAddr();
             String[] split = rpcAddr.split(":");
